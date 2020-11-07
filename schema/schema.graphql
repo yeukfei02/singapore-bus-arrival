@@ -1,0 +1,32 @@
+type Query {
+  busArrival(busStopCode: String!): BusArrival!
+  busStopCode(latitude: Float!, longitude: Float!): [BusStopCode!]!
+}
+
+type BusArrival {
+  busStopCode: String!
+  services: [Services!]!
+}
+
+type Services {
+  busNumber: String!
+  operator: String!
+  nextBus: [NestBus!]!
+}
+
+type NestBus {
+  estimatedArrival: String!
+  latitude: String!
+  longitude: String!
+  load: String!
+  feature: String!
+  type: String!
+}
+
+type BusStopCode {
+  busStopCode: String!
+  roadName: String!
+  description: String!
+  latitude: Float!
+  longitude: Float!
+}
