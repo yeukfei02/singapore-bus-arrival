@@ -1,0 +1,43 @@
+org: yeukfei02
+app: singapore-bus-arrival
+service: singapore-bus-arrival
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: v1
+  region: ap-southeast-1
+  environment:
+    NODE_ENV: production
+    ACCOUNT_KEY: ${param:ACCOUNT_KEY}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "xray:PutTraceSegments"
+        - "xray:PutTelemetryRecords"
+      Resource:
+        - "*"
+  apiGateway:
+    shouldStartNameWithService: true
+
+functions:
+  graphql:
+    handler: src/handler.graphqlHandler
+    tracing: true
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+      - http:
+          path: /
+          method: get
+          cors: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-plugin-tracing
+  - serverless-plugin-split-stacks
