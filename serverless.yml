@@ -19,8 +19,6 @@ provider:
         - "xray:PutTelemetryRecords"
       Resource:
         - "*"
-  apiGateway:
-    shouldStartNameWithService: true
 
 functions:
   graphql:

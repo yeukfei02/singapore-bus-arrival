@@ -4,7 +4,7 @@ singapore-bus-arrival
 
 documentation: https://documenter.getpostman.com/view/3827865/TVeiDAsJ
 
-api url: https://07yu2os42b.execute-api.ap-southeast-1.amazonaws.com/v1/
+api url: https://w34wh6x0kh.execute-api.ap-southeast-1.amazonaws.com/v1/
 
 ## Requirement:
 
