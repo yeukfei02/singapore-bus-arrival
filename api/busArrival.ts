@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 import env from 'dotenv';
 env.config();
@@ -31,35 +32,46 @@ export const getBusArrival = async (busStopCode: string): Promise<any> => {
             const nextBusTwo = item.NextBus2;
             const nextBusThree = item.NextBus3;
 
-            const nextBusOneObj = {
-              estimatedArrival: nextBusOne.EstimatedArrival,
-              latitude: nextBusOne.Latitude,
-              longitude: nextBusOne.Longitude,
-              load: getLoadStr(nextBusOne.Load),
-              feature: getFeatureStr(nextBusOne.Feature),
-              type: getTypeStr(nextBusOne.Type),
-            };
-            const nextBusTwoObj = {
-              estimatedArrival: nextBusTwo.EstimatedArrival,
-              latitude: nextBusTwo.Latitude,
-              longitude: nextBusTwo.Longitude,
-              load: getLoadStr(nextBusTwo.Load),
-              feature: getFeatureStr(nextBusTwo.Feature),
-              type: getTypeStr(nextBusTwo.Type),
-            };
-            const nextBusThreeObj = {
-              estimatedArrival: nextBusThree.EstimatedArrival,
-              latitude: nextBusThree.Latitude,
-              longitude: nextBusThree.Longitude,
-              load: getLoadStr(nextBusThree.Load),
-              feature: getFeatureStr(nextBusThree.Feature),
-              type: getTypeStr(nextBusThree.Type),
-            };
+            let nextBusOneObj = {};
+            if (!_.isEmpty(nextBusOne)) {
+              nextBusOneObj = {
+                estimatedArrival: nextBusOne.EstimatedArrival,
+                latitude: nextBusOne.Latitude,
+                longitude: nextBusOne.Longitude,
+                load: getLoadStr(nextBusOne.Load),
+                feature: getFeatureStr(nextBusOne.Feature),
+                type: getTypeStr(nextBusOne.Type),
+              };
+            }
+
+            let nextBusTwoObj = {};
+            if (!_.isEmpty(nextBusTwo)) {
+              nextBusTwoObj = {
+                estimatedArrival: nextBusTwo.EstimatedArrival,
+                latitude: nextBusTwo.Latitude,
+                longitude: nextBusTwo.Longitude,
+                load: getLoadStr(nextBusTwo.Load),
+                feature: getFeatureStr(nextBusTwo.Feature),
+                type: getTypeStr(nextBusTwo.Type),
+              };
+            }
+
+            let nextBusThreeObj = {};
+            if (!_.isEmpty(nextBusThree)) {
+              nextBusThreeObj = {
+                estimatedArrival: nextBusThree.EstimatedArrival,
+                latitude: nextBusThree.Latitude,
+                longitude: nextBusThree.Longitude,
+                load: getLoadStr(nextBusThree.Load),
+                feature: getFeatureStr(nextBusThree.Feature),
+                type: getTypeStr(nextBusThree.Type),
+              };
+            }
 
             const nextBusList: any[] = [];
-            nextBusList.push(nextBusOneObj);
-            nextBusList.push(nextBusTwoObj);
-            nextBusList.push(nextBusThreeObj);
+            if (!_.isEmpty(nextBusOneObj)) nextBusList.push(nextBusOneObj);
+            if (!_.isEmpty(nextBusTwoObj)) nextBusList.push(nextBusTwoObj);
+            if (!_.isEmpty(nextBusThreeObj)) nextBusList.push(nextBusThreeObj);
 
             const obj = {
               busNumber: item.ServiceNo,

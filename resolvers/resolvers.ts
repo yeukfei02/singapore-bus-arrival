@@ -1,5 +1,7 @@
 import { getBusArrival } from '../api/busArrival';
-import { getBusStopCode } from '../api/busStopCode';
+import { getBusStopByLatLong } from '../api/busStopByLatLong';
+import { getBusStopByRoadName } from '../api/busStopByRoadName';
+import { getBusStopByDescription } from '../api/busStopByDescription';
 
 const resolvers = {
   Query: {
@@ -10,10 +12,36 @@ const resolvers = {
       return busArrivalList;
     },
 
-    busStopCode: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+    busStopByLatLong: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
       const latitude = args.latitude;
       const longitude = args.longitude;
-      const busStopCodeList = await getBusStopCode(latitude, longitude);
+
+      let busStopCodeList = [];
+      if (latitude > 0 && longitude > 0) {
+        busStopCodeList = await getBusStopByLatLong(latitude, longitude);
+      }
+
+      return busStopCodeList;
+    },
+
+    busStopByRoadName: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+      const roadName = args.roadName;
+
+      let busStopCodeList = [];
+      if (roadName) {
+        busStopCodeList = await getBusStopByRoadName(roadName);
+      }
+
+      return busStopCodeList;
+    },
+
+    busStopByDescription: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+      const description = args.description;
+
+      let busStopCodeList = [];
+      if (description) {
+        busStopCodeList = await getBusStopByDescription(description);
+      }
 
       return busStopCodeList;
     },

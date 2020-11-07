@@ -7,7 +7,9 @@ import { gql } from 'apollo-server-lambda';
 const typeDefs = gql`
   type Query {
     busArrival(busStopCode: String!): BusArrival!
-    busStopCode(latitude: Float!, longitude: Float!): [BusStopCode!]!
+    busStopByLatLong(latitude: Float!, longitude: Float!): [BusStopCode!]!
+    busStopByRoadName(roadName: String!): [BusStopCode!]!
+    busStopByDescription(description: String!): [BusStopCode!]!
   }
 
   type BusArrival {
