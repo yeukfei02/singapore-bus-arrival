@@ -3,6 +3,9 @@ import { getBusStopByLatLong } from '../api/busStopByLatLong';
 import { getBusStopByRoadName } from '../api/busStopByRoadName';
 import { getBusStopByDescription } from '../api/busStopByDescription';
 
+import { v4 as uuidv4 } from 'uuid';
+import Favourites from '../model/Favourites';
+
 const resolvers = {
   Query: {
     busArrival: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
@@ -44,6 +47,50 @@ const resolvers = {
       }
 
       return busStopCodeList;
+    },
+
+    getFavouritesByInstallationId: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+      const resultList: any[] = [];
+
+      const installationId = args.installationId;
+      if (installationId) {
+        const favourites = await Favourites.scan({ installation_id: { eq: installationId } }).exec();
+        const favouritesList = favourites.toJSON();
+        favouritesList.forEach((item: any, i: number) => {
+          resultList.push(item);
+        });
+      }
+
+      return resultList;
+    },
+  },
+
+  Mutation: {
+    addFavourites: async (root: any, args: any, context: any, info: any): Promise<any> => {
+      const result = {
+        status: false,
+      };
+
+      const installationId = args.data.installationId;
+      const item = args.data.item;
+      if (installationId && item) {
+        const favourites = new Favourites({
+          id: uuidv4(),
+          installation_id: installationId,
+          item: {
+            bus_stop_code: item.busStopCode,
+            description: item.description,
+            latitude: item.latitude,
+            longitude: item.longitude,
+            road_name: item.roadName,
+          },
+        });
+        await favourites.save();
+
+        result.status = true;
+      }
+
+      return result;
     },
   },
 };

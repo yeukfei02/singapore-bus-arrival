@@ -1596,7 +1596,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.44.tgz#3945e6b702cb6403f22b779c8ea9e5c3f44ead40"
   integrity sha512-vHPAyBX1ffLcy4fQHmDyIUMUb42gHZjPHU66nhvbMzAWJqHnySGZ6STwN3rwrnSd1FHB0DI/RWgGELgKSYRDmw==
 
-"@types/node@^13.7.0":
+"@types/node@^13.13.4", "@types/node@^13.7.0":
   version "13.13.30"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.30.tgz#1ed6e01e4ca576d5aec9cc802cc3bcf94c274192"
   integrity sha512-HmqFpNzp3TSELxU/bUuRK+xzarVOAsR00hzcvM0TXrMlt/+wcSLa5q6YhTb6/cA6wqDCZLDcfd8fSL95x5h7AA==
@@ -1676,6 +1676,13 @@
     "@types/mime" "*"
     "@types/node" "*"
 
+"@types/source-map-support@^0.5.1":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@types/source-map-support/-/source-map-support-0.5.3.tgz#acb6b3e499c20692552d16934c16162c84594e16"
+  integrity sha512-fvjMjVH8Rmokw2dWh1dkj90iX5R8FPjeZzjNH+6eFXReh0QnHFf1YBl3B0CF0RohIAA3SDRJsGeeUWKl6d7HqA==
+  dependencies:
+    source-map "^0.6.0"
+
 "@types/stack-utils@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
@@ -1685,6 +1692,11 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.0.tgz#fef1904e4668b6e5ecee60c52cc6a078ffa6697d"
   integrity sha512-I99sngh224D0M7XgW1s120zxCt3VYQ3IQsuw3P3jbq5GG4yc79+ZjyKznyOGIQrflfylLgcfekeZW/vk0yng6A==
+
+"@types/uuid@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+  integrity sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
 
 "@types/ws@^7.0.0", "@types/ws@^7.2.9":
   version "7.2.9"
@@ -2301,7 +2313,7 @@ aws-info@^1.0.0:
   resolved "https://registry.yarnpkg.com/aws-info/-/aws-info-1.1.0.tgz#847b77824f98c96011b74c7f9436cb4823ec75c3"
   integrity sha512-ZUWFfYy9Mu5ppoDJr3TxY0UWc4peP3tS5sStgnKkRh3urYalQaZWHewhbDbz40I84PO0xhVdBGut1xQtjum3mw==
 
-aws-sdk@*, aws-sdk@^2.624.0, aws-sdk@^2.772.0, aws-sdk@^2.787.0:
+aws-sdk@*, aws-sdk@^2.624.0, aws-sdk@^2.668.0, aws-sdk@^2.772.0, aws-sdk@^2.787.0:
   version "2.787.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.787.0.tgz#4d8966d11c7dbe770de26632e552c97b2d91e340"
   integrity sha512-3WlUdWqUB8Vhdvj/7TENr/7SEmQzxmnHxOJ8l2WjZbcMRSuI0/9Ym4p1TC3hf21VDVDhkdGlw60QqpZQ1qb+Mg==
@@ -3880,6 +3892,17 @@ duration@^0.2.2:
   dependencies:
     d "1"
     es5-ext "~0.10.46"
+
+dynamoose@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/dynamoose/-/dynamoose-2.3.0.tgz#b8cd7417c52ba62768d22451638667a1760c6a10"
+  integrity sha512-XfaPu3eXctD1NiRNzSvjoJvPAuAAHW8jY5wwYXnkVuizTolS4D8R9mAwuKYenK6+eZwHCAgoJEPYE2caFlJWhA==
+  dependencies:
+    "@types/node" "^13.13.4"
+    "@types/source-map-support" "^0.5.1"
+    aws-sdk "^2.668.0"
+    source-map-support "^0.5.19"
+    uuid "^8.0.0"
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
