@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.3...v0.1.4) (2020-11-08)
+
+
+### Features
+
+* 🎸 add addfavourites and getfavouritesbyinstallationid ([be3e450](https://github.com/yeukfei02/singapore-bus-arrival/commit/be3e4505573d1c36d78944685423b88bb4dd1e1b))
+
 ### [0.1.3](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.2...v0.1.3) (2020-11-07)
 
 
