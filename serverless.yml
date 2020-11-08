@@ -11,6 +11,8 @@ provider:
   region: ap-southeast-1
   environment:
     NODE_ENV: production
+    MY_AWS_ACCESS_KEY: ${param:MY_AWS_ACCESS_KEY}
+    MY_AWS_SECRET_ACCESS_KEY: ${param:MY_AWS_SECRET_ACCESS_KEY}
     ACCOUNT_KEY: ${param:ACCOUNT_KEY}
   iamRoleStatements:
     - Effect: "Allow"

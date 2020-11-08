@@ -10,6 +10,12 @@ const typeDefs = gql`
     busStopByLatLong(latitude: Float!, longitude: Float!): [BusStopCode!]!
     busStopByRoadName(roadName: String!): [BusStopCode!]!
     busStopByDescription(description: String!): [BusStopCode!]!
+
+    getFavouritesByInstallationId(installationId: String!): [Favourites!]!
+  }
+
+  type Mutation {
+    addFavourites(data: AddFavourites!): AddFavouritesResult!
   }
 
   type BusArrival {
@@ -38,6 +44,39 @@ const typeDefs = gql`
     description: String!
     latitude: Float!
     longitude: Float!
+  }
+
+  type AddFavouritesResult {
+    status: Boolean!
+  }
+
+  type Favourites {
+    id: String!
+    installation_id: String!
+    item: FavouriteItem!
+    createdAt: String!
+    updatedAt: String!
+  }
+
+  type FavouriteItem {
+    bus_stop_code: String!
+    description: String!
+    latitude: Float!
+    longitude: Float!
+    road_name: String!
+  }
+
+  input AddFavourites {
+    installationId: String!
+    item: AddFavouriteItem
+  }
+
+  input AddFavouriteItem {
+    busStopCode: String!
+    description: String!
+    latitude: Float!
+    longitude: Float!
+    roadName: String!
   }
 `;
 
