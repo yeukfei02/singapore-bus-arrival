@@ -16,15 +16,31 @@ const resolvers = {
     },
 
     busStopByLatLong: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+      let resultList = [];
+
       const latitude = args.latitude;
       const longitude = args.longitude;
+      const pageNumber = args.pageNumber || 1;
 
-      let busStopCodeList = [];
+      let limit = 10;
+
       if (latitude > 0 && longitude > 0) {
-        busStopCodeList = await getBusStopByLatLong(latitude, longitude);
+        const busStopCodeList = await getBusStopByLatLong(latitude, longitude);
+        if (busStopCodeList) {
+          if (pageNumber === 1) {
+            resultList = busStopCodeList.filter((item: any, i: number) => {
+              return i < limit;
+            });
+          } else {
+            limit = pageNumber * 10;
+            resultList = busStopCodeList.filter((item: any, i: number) => {
+              return i < limit;
+            });
+          }
+        }
       }
 
-      return busStopCodeList;
+      return resultList;
     },
 
     busStopByRoadName: async (root: any, args: any, context: any, info: any): Promise<any[]> => {

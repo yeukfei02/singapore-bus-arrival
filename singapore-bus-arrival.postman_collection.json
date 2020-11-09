@@ -6,127 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "mutations",
-			"item": [
-				{
-					"name": "addFavourites",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "mutation addFavourites ($data: AddFavourites!) {\n    addFavourites (data: $data) {\n        status\n    }\n}",
-								"variables": "{\n  \"data\": {\n    \"installationId\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n    \"item\": {\n        \"busStopCode\": \"64189\",\n        \"description\": \"Aft Old Tampines Rd\",\n        \"latitude\": 1.37693109577247,\n        \"longitude\": 103.91392221641736,\n        \"roadName\": \"Tampines Rd\"\n    }\n  }\n}"
-							},
-							"options": {
-								"graphql": {}
-							}
-						},
-						"url": {
-							"raw": "{{rootUrl}}",
-							"host": [
-								"{{rootUrl}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "addFavourites",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "graphql",
-									"graphql": {
-										"query": "mutation addFavourites ($data: AddFavourites!) {\n    addFavourites (data: $data) {\n        status\n    }\n}",
-										"variables": "{\n  \"data\": {\n    \"installationId\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n    \"item\": {\n        \"busStopCode\": \"64189\",\n        \"description\": \"Aft Old Tampines Rd\",\n        \"latitude\": 1.37693109577247,\n        \"longitude\": 103.91392221641736,\n        \"roadName\": \"Tampines Rd\"\n    }\n  }\n}"
-									},
-									"options": {
-										"graphql": {}
-									}
-								},
-								"url": {
-									"raw": "{{rootUrl}}",
-									"host": [
-										"{{rootUrl}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "content-length",
-									"value": "43"
-								},
-								{
-									"key": "access-control-allow-credentials",
-									"value": "true"
-								},
-								{
-									"key": "vary",
-									"value": "origin"
-								},
-								{
-									"key": "access-control-expose-headers",
-									"value": "WWW-Authenticate,Server-Authorization"
-								},
-								{
-									"key": "cache-control",
-									"value": "no-cache"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 08 Nov 2020 16:21:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"addFavourites\": {\n            \"status\": true\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "deleteFavouritesById",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "graphql",
-							"graphql": {
-								"query": "mutation deleteFavouritesById ($data: DeleteFavourites!) {\n    deleteFavouritesById (data: $data) {\n        status\n    }\n}",
-								"variables": "{\n    \"data\": {\n        \"id\": \"7b9e8fb2-29b6-41b6-90f0-6ed8b26f79eb\",\n        \"installationId\": \"6b5b76c6-597e-48d0-9bfa-ac4a0557b168\"\n    }\n}"
-							},
-							"options": {
-								"graphql": {}
-							}
-						},
-						"url": {
-							"raw": "{{rootUrl}}",
-							"host": [
-								"{{rootUrl}}"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
 			"name": "queries",
 			"item": [
 				{
@@ -244,8 +123,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query busStopByLatLong ($latitude: Float!, $longitude: Float!) {\n    busStopByLatLong (latitude: $latitude, longitude: $longitude) {\n        busStopCode\n        roadName\n        description\n        latitude\n        longitude\n    }\n}",
-								"variables": "{\n  \"latitude\": 1.31313747728456,\n  \"longitude\": 103.8563561439714\n}"
+								"query": "query busStopByLatLong ($latitude: Float!, $longitude: Float!, $pageNumber: Int!) {\n    busStopByLatLong (latitude: $latitude, longitude: $longitude, pageNumber: $pageNumber) {\n        busStopCode\n        roadName\n        description\n        latitude\n        longitude\n    }\n}",
+								"variables": "{\n  \"latitude\": 1.31313747728456,\n  \"longitude\": 103.8563561439714,\n  \"pageNumber\": 1\n}"
 							},
 							"options": {
 								"graphql": {}
@@ -651,6 +530,127 @@
 							"body": "{\n    \"data\": {\n        \"getFavouritesByInstallationId\": [\n            {\n                \"id\": \"578f1c76-fe5c-41d5-ab5d-a6304556e1d4\",\n                \"installation_id\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n                \"item\": {\n                    \"bus_stop_code\": \"64189\",\n                    \"description\": \"Aft Old Tampines Rd\",\n                    \"latitude\": 1.37693109577247,\n                    \"longitude\": 103.91392221641736,\n                    \"road_name\": \"Tampines Rd\"\n                },\n                \"createdAt\": \"2020-11-08T16:17:49.164Z\",\n                \"updatedAt\": \"2020-11-08T16:17:49.164Z\"\n            },\n            {\n                \"id\": \"d1d5c64a-5610-4ad2-9a46-ffc5942d3f8c\",\n                \"installation_id\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n                \"item\": {\n                    \"bus_stop_code\": \"64189\",\n                    \"description\": \"Aft Old Tampines Rd\",\n                    \"latitude\": 1.37693109577247,\n                    \"longitude\": 103.91392221641736,\n                    \"road_name\": \"Tampines Rd\"\n                },\n                \"createdAt\": \"2020-11-08T16:17:51.286Z\",\n                \"updatedAt\": \"2020-11-08T16:17:51.286Z\"\n            },\n            {\n                \"id\": \"997a50ae-f010-43af-a4f6-c40ffeaaab41\",\n                \"installation_id\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n                \"item\": {\n                    \"bus_stop_code\": \"64189\",\n                    \"description\": \"Aft Old Tampines Rd\",\n                    \"latitude\": 1.37693109577247,\n                    \"longitude\": 103.91392221641736,\n                    \"road_name\": \"Tampines Rd\"\n                },\n                \"createdAt\": \"2020-11-08T16:21:23.281Z\",\n                \"updatedAt\": \"2020-11-08T16:21:23.281Z\"\n            }\n        ]\n    }\n}"
 						}
 					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mutations",
+			"item": [
+				{
+					"name": "addFavourites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addFavourites ($data: AddFavourites!) {\n    addFavourites (data: $data) {\n        status\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"installationId\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n    \"item\": {\n        \"busStopCode\": \"64189\",\n        \"description\": \"Aft Old Tampines Rd\",\n        \"latitude\": 1.37693109577247,\n        \"longitude\": 103.91392221641736,\n        \"roadName\": \"Tampines Rd\"\n    }\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addFavourites",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation addFavourites ($data: AddFavourites!) {\n    addFavourites (data: $data) {\n        status\n    }\n}",
+										"variables": "{\n  \"data\": {\n    \"installationId\": \"57D83666-41E2-4991-B41D-3860CDFAB699\",\n    \"item\": {\n        \"busStopCode\": \"64189\",\n        \"description\": \"Aft Old Tampines Rd\",\n        \"latitude\": 1.37693109577247,\n        \"longitude\": 103.91392221641736,\n        \"roadName\": \"Tampines Rd\"\n    }\n  }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "43"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "vary",
+									"value": "origin"
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "WWW-Authenticate,Server-Authorization"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 08 Nov 2020 16:21:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addFavourites\": {\n            \"status\": true\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteFavouritesById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteFavouritesById ($data: DeleteFavourites!) {\n    deleteFavouritesById (data: $data) {\n        status\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"id\": \"7b9e8fb2-29b6-41b6-90f0-6ed8b26f79eb\",\n        \"installationId\": \"6b5b76c6-597e-48d0-9bfa-ac4a0557b168\"\n    }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
