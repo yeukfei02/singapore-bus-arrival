@@ -98,6 +98,30 @@
 							"body": "{\n    \"data\": {\n        \"addFavourites\": {\n            \"status\": true\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "deleteFavouritesById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteFavouritesById ($data: DeleteFavourites!) {\n    deleteFavouritesById (data: $data) {\n        status\n    }\n}",
+								"variables": "{\n    \"data\": {\n        \"id\": \"7b9e8fb2-29b6-41b6-90f0-6ed8b26f79eb\",\n        \"installationId\": \"6b5b76c6-597e-48d0-9bfa-ac4a0557b168\"\n    }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
