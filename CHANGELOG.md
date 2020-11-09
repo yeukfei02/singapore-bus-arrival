@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.4...v0.1.5) (2020-11-09)
+
+
+### Features
+
+* 🎸 add deleteFavouritesById ([4aa857b](https://github.com/yeukfei02/singapore-bus-arrival/commit/4aa857b2336fff4df1718453bb8c94c135c0615a))
+
 ### [0.1.4](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.3...v0.1.4) (2020-11-08)
 
 
