@@ -92,6 +92,22 @@ const resolvers = {
 
       return result;
     },
+
+    deleteFavouritesById: async (root: any, args: any, context: any, info: any): Promise<any> => {
+      const result = {
+        status: false,
+      };
+
+      const id = args.data.id;
+      const installationId = args.data.installationId;
+      if (id && installationId) {
+        await Favourites.delete({ id: id, installation_id: installationId });
+
+        result.status = true;
+      }
+
+      return result;
+    },
   },
 };
 
