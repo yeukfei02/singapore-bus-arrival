@@ -16,6 +16,7 @@ const typeDefs = gql`
 
   type Mutation {
     addFavourites(data: AddFavourites!): AddFavouritesResult!
+    deleteFavouritesById(data: DeleteFavourites!): DeleteFavouritesByIdResult!
   }
 
   type BusArrival {
@@ -50,6 +51,10 @@ const typeDefs = gql`
     status: Boolean!
   }
 
+  type DeleteFavouritesByIdResult {
+    status: Boolean!
+  }
+
   type Favourites {
     id: String!
     installation_id: String!
@@ -77,6 +82,11 @@ const typeDefs = gql`
     latitude: Float!
     longitude: Float!
     roadName: String!
+  }
+
+  input DeleteFavourites {
+    id: String!
+    installationId: String!
   }
 `;
 

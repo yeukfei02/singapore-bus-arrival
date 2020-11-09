@@ -9,6 +9,7 @@ type Query {
 
 type Mutation {
   addFavourites(data: AddFavourites!): AddFavouritesResult!
+  deleteFavouritesById(data: DeleteFavourites!): DeleteFavouritesByIdResult!
 }
 
 type BusArrival {
@@ -43,6 +44,10 @@ type AddFavouritesResult {
   status: Boolean!
 }
 
+type DeleteFavouritesByIdResult {
+  status: Boolean!
+}
+
 type Favourites {
   id: String!
   installation_id: String!
@@ -70,4 +75,9 @@ input AddFavouriteItem {
   latitude: Float!
   longitude: Float!
   roadName: String!
+}
+
+input DeleteFavourites {
+  id: String!
+  installationId: String!
 }
