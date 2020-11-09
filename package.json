@@ -1,6 +1,6 @@
 {
   "name": "singapore-bus-arrival",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "main": "app.js",
   "repository": "https://github.com/yeukfei02/singapore-bus-arrival.git",
   "author": "Donald Wu <yeukfei02@gmail.com>",
