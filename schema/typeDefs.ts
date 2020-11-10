@@ -27,10 +27,10 @@ const typeDefs = gql`
   type Services {
     busNumber: String!
     operator: String!
-    nextBus: [NestBus!]!
+    nextBus: [NextBus!]!
   }
 
-  type NestBus {
+  type NextBus {
     estimatedArrival: String!
     latitude: String!
     longitude: String!
