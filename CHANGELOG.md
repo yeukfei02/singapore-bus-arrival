@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.7...v0.1.8) (2020-11-11)
+
+
+### Bug Fixes
+
+* 🐛 add introspection ([afd4394](https://github.com/yeukfei02/singapore-bus-arrival/commit/afd43949ec7443edf0e61d4e50136ccc169a118b))
+
 ### [0.1.7](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.6...v0.1.7) (2020-11-10)
 
 ### [0.1.6](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.5...v0.1.6) (2020-11-09)
