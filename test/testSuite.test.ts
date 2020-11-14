@@ -1,5 +1,7 @@
-import { mainTest } from './main';
+import { busTest } from './bus';
+import { favouritesTest } from './favourites';
 
 describe('testSuite test case', () => {
-  mainTest();
+  busTest();
+  favouritesTest();
 });
