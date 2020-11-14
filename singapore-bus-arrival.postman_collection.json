@@ -650,7 +650,90 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "deleteFavouritesById",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation deleteFavouritesById ($data: DeleteFavourites!) {\n    deleteFavouritesById (data: $data) {\n        status\n    }\n}",
+										"variables": "{\n    \"data\": {\n        \"id\": \"7b9e8fb2-29b6-41b6-90f0-6ed8b26f79eb\",\n        \"installationId\": \"6b5b76c6-597e-48d0-9bfa-ac4a0557b168\"\n    }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Nov 2020 12:05:52 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "6b9bcb67-437e-4f43-a721-d0be7d5fa8c2"
+								},
+								{
+									"key": "x-amzn-Remapped-Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "V_w0tHQtSQ0FU6Q="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-5fafc81e-64d5b4917631721a56159e5c;Sampled=1"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 3922e47363801e147476c95f0336c634.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "HKG60-C1"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "2_41chto6l-eAs9eaNATMeIRs_qS--IYghxdcTntcXKrG7X91BJNQA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteFavouritesById\": {\n            \"status\": true\n        }\n    }\n}"
+						}
+					]
 				}
 			],
 			"protocolProfileBehavior": {}
