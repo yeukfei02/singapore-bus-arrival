@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.10...v0.1.11) (2020-11-14)
+
+
+### Features
+
+* 🎸 add apollo-server-testing for test case ([59e8d09](https://github.com/yeukfei02/singapore-bus-arrival/commit/59e8d099ceab215483bb95e66c5ad951a24e3a8a))
+
 ### [0.1.10](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.9...v0.1.10) (2020-11-14)
 
 ### [0.1.9](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.8...v0.1.9) (2020-11-11)
