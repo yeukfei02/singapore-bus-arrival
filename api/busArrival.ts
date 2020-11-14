@@ -120,13 +120,13 @@ function getLoadStr(load: string) {
 
   switch (load) {
     case 'SEA':
-      loadStr = `SEA (Seats Available)`;
+      loadStr = `Seats Available`;
       break;
     case 'SDA':
-      loadStr = `SDA (Standing Available)`;
+      loadStr = `Standing Available`;
       break;
     case 'LSD':
-      loadStr = `LSD (Limited Standing)`;
+      loadStr = `Limited Standing`;
       break;
     default:
       break;
@@ -140,7 +140,7 @@ function getFeatureStr(feature: string) {
 
   switch (feature) {
     case 'WAB':
-      featureStr = `WAB (Wheel-Chair Accessible)`;
+      featureStr = `Wheel-Chair Accessible`;
       break;
     default:
       break;
@@ -154,13 +154,13 @@ function getTypeStr(type: string) {
 
   switch (type) {
     case 'SD':
-      typeStr = `SD (Single Deck)`;
+      typeStr = `Single Deck`;
       break;
     case 'DD':
-      typeStr = `SD (Double Deck)`;
+      typeStr = `Double Deck`;
       break;
     case 'BD':
-      typeStr = `SD (Bendy)`;
+      typeStr = `Bendy`;
       break;
     default:
       break;
