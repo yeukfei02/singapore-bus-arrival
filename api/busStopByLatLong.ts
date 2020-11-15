@@ -16,8 +16,8 @@ export const getBusStopByLatLong = async (latitude: number, longitude: number): 
     if (!_.isEmpty(responseDataValue)) {
       responseDataValue.forEach((item: Value, i: number) => {
         if (
-          _.inRange(latitude, item.Latitude - 5, item.Latitude + 5) &&
-          _.inRange(longitude, item.Longitude - 5, item.Longitude + 5)
+          _.inRange(latitude, item.Latitude - 0.5, item.Latitude + 0.5) &&
+          _.inRange(longitude, item.Longitude - 0.5, item.Longitude + 0.5)
         ) {
           const obj = {
             busStopCode: item.BusStopCode,
