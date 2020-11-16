@@ -1,9 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
 
-import env from 'dotenv';
-env.config();
-
 import { BusStopCode, Value } from '../interface/BusStopCode';
 
 export const getBusStopByDescription = async (description: string): Promise<any> => {

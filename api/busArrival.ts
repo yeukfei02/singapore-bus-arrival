@@ -1,9 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
 
-import env from 'dotenv';
-env.config();
-
 import { BusArrival, Service } from '../interface/BusArrival';
 
 export const getBusArrival = async (busStopCode: string): Promise<any> => {
