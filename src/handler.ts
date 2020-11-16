@@ -1,3 +1,6 @@
+import env from 'dotenv';
+env.config();
+
 import { ApolloServer } from 'apollo-server-lambda';
 import typeDefs from '../schema/typeDefs';
 import resolvers from '../resolvers/resolvers';

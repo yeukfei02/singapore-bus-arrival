@@ -1,6 +1,3 @@
-import env from 'dotenv';
-env.config();
-
 import dynamoose from 'dynamoose';
 dynamoose.aws.sdk.config.update({
   accessKeyId: process.env.MY_AWS_ACCESS_KEY,
