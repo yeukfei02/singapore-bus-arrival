@@ -12,6 +12,7 @@ awsXRay.captureAWS(awsSdk);
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  tracing: true,
   introspection: true,
   playground: {
     endpoint: '/v1',
