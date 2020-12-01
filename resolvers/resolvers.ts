@@ -8,14 +8,14 @@ import Favourites from '../model/Favourites';
 
 const resolvers = {
   Query: {
-    busArrival: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+    busArrival: async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
       const busStopCode = args.busStopCode;
       const busArrivalList = await getBusArrival(busStopCode);
 
       return busArrivalList;
     },
 
-    busStopByLatLong: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+    busStopByLatLong: async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
       let resultList = [];
 
       const latitude = args.latitude;
@@ -43,7 +43,7 @@ const resolvers = {
       return resultList;
     },
 
-    busStopByRoadName: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+    busStopByRoadName: async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
       const roadName = args.roadName;
 
       let busStopCodeList = [];
@@ -54,7 +54,7 @@ const resolvers = {
       return busStopCodeList;
     },
 
-    busStopByDescription: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+    busStopByDescription: async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
       const description = args.description;
 
       let busStopCodeList = [];
@@ -65,7 +65,7 @@ const resolvers = {
       return busStopCodeList;
     },
 
-    getFavouritesByInstallationId: async (root: any, args: any, context: any, info: any): Promise<any[]> => {
+    getFavouritesByInstallationId: async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
       const resultList: any[] = [];
 
       const installationId = args.installationId;
@@ -82,7 +82,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addFavourites: async (root: any, args: any, context: any, info: any): Promise<any> => {
+    addFavourites: async (parent: any, args: any, context: any, info: any): Promise<any> => {
       const result = {
         status: false,
       };
@@ -109,7 +109,7 @@ const resolvers = {
       return result;
     },
 
-    deleteFavouritesById: async (root: any, args: any, context: any, info: any): Promise<any> => {
+    deleteFavouritesById: async (parent: any, args: any, context: any, info: any): Promise<any> => {
       const result = {
         status: false,
       };
