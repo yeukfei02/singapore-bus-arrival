@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.15...v0.1.16) (2020-12-15)
+
+
+### Bug Fixes
+
+* 🐛 fix stage and NODE_ENV ([d30ec57](https://github.com/yeukfei02/singapore-bus-arrival/commit/d30ec574dde518e0b97e83613739e9aeda839fed))
+* 🐛 fix stage and NODE_ENV in master branch ([1894021](https://github.com/yeukfei02/singapore-bus-arrival/commit/18940213fa3846765473eecd23a70e1d6c17aefe))
+
 ### [0.1.15](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.14...v0.1.15) (2020-11-25)
 
 ### [0.1.14](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.13...v0.1.14) (2020-11-16)
