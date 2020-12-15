@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.16...v0.1.17) (2020-12-15)
+
+
+### Bug Fixes
+
+* 🐛 fix playground endpoint ([fb386ec](https://github.com/yeukfei02/singapore-bus-arrival/commit/fb386ecc4820337445b786a157a9aeb635849835))
+
 ### [0.1.16](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.15...v0.1.16) (2020-12-15)
 
 
