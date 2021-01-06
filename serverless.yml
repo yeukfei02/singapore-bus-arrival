@@ -3,12 +3,16 @@ app: singapore-bus-arrival
 service: singapore-bus-arrival
 
 frameworkVersion: '2'
+useDotenv: true
 
 provider:
   name: aws
   runtime: nodejs12.x
   stage: dev
   region: ap-southeast-1
+  tracing:
+    apiGateway: true
+    lambda: true
   environment:
     NODE_ENV: development
     MY_AWS_ACCESS_KEY: ${param:MY_AWS_ACCESS_KEY}
@@ -21,11 +25,13 @@ provider:
         - 'xray:PutTelemetryRecords'
       Resource:
         - '*'
+  apiGateway:
+    shouldStartNameWithService: true
+  lambdaHashingVersion: 20201221
 
 functions:
   graphql:
     handler: src/handler.graphqlHandler
-    tracing: true
     events:
       - http:
           path: /
@@ -39,5 +45,4 @@ functions:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
-  - serverless-plugin-tracing
   - serverless-plugin-split-stacks
