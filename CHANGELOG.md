@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.19...v0.1.20) (2021-01-06)
+
+
+### Features
+
+* 🎸 add context in handler ([fdca235](https://github.com/yeukfei02/singapore-bus-arrival/commit/fdca235547f51a1ff483602f6c897005db79f32c))
+
+
+### Bug Fixes
+
+* 🐛 fix playground endpoint ([e1a2797](https://github.com/yeukfei02/singapore-bus-arrival/commit/e1a2797a8e5e868f48e3fdaa9a67e43f557bdbc3))
+
 ### [0.1.19](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.18...v0.1.19) (2021-01-06)
 
 ### [0.1.18](https://github.com/yeukfei02/singapore-bus-arrival/compare/v0.1.17...v0.1.18) (2021-01-06)
