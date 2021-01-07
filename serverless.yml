@@ -28,6 +28,7 @@ provider:
         - '*'
   apiGateway:
     shouldStartNameWithService: true
+    description: singapore bus arrival dev
   lambdaHashingVersion: 20201221
 
 functions:
