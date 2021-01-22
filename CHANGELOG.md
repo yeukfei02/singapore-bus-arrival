@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.0.2...v1.1.0) (2021-01-22)
+
+
+### Features
+
+* 🎸 update sls and dynamoose lib ([f7c5f58](https://github.com/yeukfei02/singapore-bus-arrival/commit/f7c5f5872cbd25e9edce1070ea479c9d8b0e39f9))
+
+
+### Bug Fixes
+
+* 🐛 add  apiGateway description ([17f7158](https://github.com/yeukfei02/singapore-bus-arrival/commit/17f71584014b6d27c7dfb04944da475526591550))
+* 🐛 fix apiGateway description in master ([6faf879](https://github.com/yeukfei02/singapore-bus-arrival/commit/6faf879d4e766dbc15b20ea65525bab2774c4ab7))
+
 ### [1.0.2](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.0.1...v1.0.2) (2021-01-07)
 
 
