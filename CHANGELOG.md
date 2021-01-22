@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.1.1...v1.2.0) (2021-01-22)
+
+
+### Features
+
+* 🎸 add package command ([5582f5c](https://github.com/yeukfei02/singapore-bus-arrival/commit/5582f5c8f4e0fa71290338a564c51d9478574bea))
+* 🎸 add serverless-prune-plugin ([c008c5a](https://github.com/yeukfei02/singapore-bus-arrival/commit/c008c5afe5adf3fba1a3280742f5fe2a22ca99fb))
+
+
+### Bug Fixes
+
+* 🐛 update sls lib ([243da3a](https://github.com/yeukfei02/singapore-bus-arrival/commit/243da3a8c16ffbb8e8ce11aaaa70289785971732))
+
 ### [1.1.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.1.0...v1.1.1) (2021-01-22)
 
 
