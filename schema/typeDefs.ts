@@ -1,7 +1,3 @@
-// import { importSchema } from 'graphql-import';
-
-// const typeDefs = importSchema('schema/schema.graphql');
-
 import { gql } from 'apollo-server-lambda';
 
 const typeDefs = gql`
