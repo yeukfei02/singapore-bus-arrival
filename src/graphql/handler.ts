@@ -7,7 +7,9 @@ import resolvers from '../../resolvers/resolvers';
 
 import awsXRay from 'aws-xray-sdk';
 import awsSdk from 'aws-sdk';
-awsXRay.captureAWS(awsSdk);
+if (process.env._X_AMZN_TRACE_ID) {
+  awsXRay.captureAWS(awsSdk);
+}
 
 const server = new ApolloServer({
   typeDefs,
