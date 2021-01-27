@@ -37,7 +37,7 @@
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "prettier": "^2.1.2",
-    "serverless": "^2.20.1",
+    "serverless": "^2.21.1",
     "serverless-offline": "^6.8.0",
     "serverless-plugin-split-stacks": "^1.9.3",
     "serverless-plugin-typescript": "^1.1.9",
