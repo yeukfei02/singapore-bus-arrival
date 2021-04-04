@@ -2,19 +2,19 @@
 
 singapore bus arrival times api
 
-documentation: https://documenter.getpostman.com/view/3827865/TVeiDBKg
+documentation: <https://documenter.getpostman.com/view/3827865/TVeiDBKg>
 
-api url: https://sxbyrgxzxe.execute-api.ap-southeast-1.amazonaws.com/prod/
+api url: <https://sxbyrgxzxe.execute-api.ap-southeast-1.amazonaws.com/prod/>
 
-## Requirement:
+## Requirement
 
 - install yarn
 - install node (v12+)
 - install serverless
 
-## Testing and run:
+## Testing and run
 
-```
+```zsh
 // test api in local
 $ yarn run dev
 
