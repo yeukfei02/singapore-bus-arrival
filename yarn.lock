@@ -2289,10 +2289,10 @@ atomic-batcher@^1.0.2:
   resolved "https://registry.yarnpkg.com/atomic-batcher/-/atomic-batcher-1.0.2.tgz#d16901d10ccec59516c197b9ccd8930689b813b4"
   integrity sha1-0WkB0QzOxZUWwZe5zNiTBom4E7Q=
 
-aws-info@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/aws-info/-/aws-info-1.1.0.tgz#847b77824f98c96011b74c7f9436cb4823ec75c3"
-  integrity sha512-ZUWFfYy9Mu5ppoDJr3TxY0UWc4peP3tS5sStgnKkRh3urYalQaZWHewhbDbz40I84PO0xhVdBGut1xQtjum3mw==
+aws-info@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/aws-info/-/aws-info-1.2.0.tgz#72321268e60aa9210f7a21cd12f7236d8e8b5158"
+  integrity sha512-24q5Rh3bno7ldoyCq99d6hpnLI+PAMocdeVaaGt/5BTQMprvDwQToHfNnruqN11odCHZZIQbRBw+nZo1lTCH9g==
 
 aws-sdk@*, aws-sdk@^2.624.0, aws-sdk@^2.787.0:
   version "2.787.0"
@@ -9129,15 +9129,15 @@ serverless-offline@^6.8.0:
     velocityjs "^2.0.0"
     ws "^7.2.1"
 
-serverless-plugin-split-stacks@^1.9.3:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/serverless-plugin-split-stacks/-/serverless-plugin-split-stacks-1.9.3.tgz#3ba1f00643f6ec5d9c2f6613d8abed104ed89868"
-  integrity sha512-ZSPekmIZzN7aWVKSI3PRrVgxf7qLkczHTBUZdb68OzQbaahPga8HFAwpeFvhjMWuxU3YQX/OZSQHZJkUCWnXOw==
+serverless-plugin-split-stacks@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-split-stacks/-/serverless-plugin-split-stacks-1.11.0.tgz#3f8bdc9f740e565f72657b54f28de72247bb7d11"
+  integrity sha512-lHXs3ONhsWJOP80T+/M/THaepp4y8C1SUng+iycPMVC0U7iDO0v84PlhqPDGDZZ5bDMXXsclE7i4OFv1jE45Lg==
   dependencies:
-    aws-info "^1.0.0"
-    lodash "^4.17.15"
-    semver "^6.3.0"
-    throat "^5.0.0"
+    aws-info "^1.1.0"
+    lodash "^4.17.20"
+    semver "^7.3.4"
+    throat "^6.0.1"
 
 serverless-plugin-typescript@^1.1.9:
   version "1.1.9"
@@ -10016,6 +10016,11 @@ throat@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
   integrity sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==
+
+throat@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/throat/-/throat-6.0.1.tgz#d514fedad95740c12c2d7fc70ea863eb51ade375"
+  integrity sha512-8hmiGIJMDlwjg7dlJ4yKGLK8EsYqKgPWbG3b4wjJddKNwc7N7Dpn08Df4szr/sZdMVeOstrdYSsqzX6BYbcB+w==
 
 through2@^2.0.0, through2@^2.0.2:
   version "2.0.5"
