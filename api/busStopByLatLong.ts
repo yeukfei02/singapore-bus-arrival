@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import { BusStopCode, Value } from '../interface/BusStopCode';
 
-export const getBusStopByLatLong = async (latitude: number, longitude: number): Promise<any> => {
+export const getBusStopByLatLong = async (): Promise<any> => {
   const busStopCodeList: any[] = [];
 
   let skipNum = 0;
@@ -15,19 +15,14 @@ export const getBusStopByLatLong = async (latitude: number, longitude: number): 
     const responseDataValue = await fetchBusStop(skipNum);
     if (!_.isEmpty(responseDataValue)) {
       responseDataValue.forEach((item: Value, i: number) => {
-        if (
-          _.inRange(latitude, item.Latitude - 0.5, item.Latitude + 0.5) &&
-          _.inRange(longitude, item.Longitude - 0.5, item.Longitude + 0.5)
-        ) {
-          const obj = {
-            busStopCode: item.BusStopCode,
-            roadName: item.RoadName,
-            description: item.Description,
-            latitude: item.Latitude,
-            longitude: item.Longitude,
-          };
-          busStopCodeList.push(obj);
-        }
+        const obj = {
+          busStopCode: item.BusStopCode,
+          roadName: item.RoadName,
+          description: item.Description,
+          latitude: item.Latitude,
+          longitude: item.Longitude,
+        };
+        busStopCodeList.push(obj);
       });
 
       skipNum += 500;

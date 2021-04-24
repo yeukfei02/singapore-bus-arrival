@@ -4,6 +4,7 @@ import { getBusStopByRoadName } from '../api/busStopByRoadName';
 import { getBusStopByDescription } from '../api/busStopByDescription';
 
 import { v4 as uuidv4 } from 'uuid';
+import _ from 'lodash';
 import Favourites from '../model/Favourites';
 
 const resolvers = {
@@ -24,21 +25,36 @@ const resolvers = {
 
       let limit = 10;
 
-      if (latitude > 0 && longitude > 0) {
-        const busStopCodeList = await getBusStopByLatLong(latitude, longitude);
-        if (busStopCodeList) {
+      const busStopCodeList = await getBusStopByLatLong();
+      console.log('busStopCodeList.length = ', busStopCodeList.length);
+      if (busStopCodeList) {
+        resultList = busStopCodeList.filter((item: any, i: number) => {
+          if (latitude > 0 && longitude > 0) {
+            if (
+              _.inRange(latitude, item.latitude - 0.005, item.latitude + 0.005) &&
+              _.inRange(longitude, item.longitude - 0.005, item.longitude + 0.005)
+            ) {
+              return item;
+            }
+          }
+        });
+
+        console.log('resultList.length = ', resultList.length);
+
+        if (resultList) {
           if (pageNumber === 1) {
-            resultList = busStopCodeList.filter((item: any, i: number) => {
+            resultList = resultList.filter((item: any, i: number) => {
               return i < limit;
             });
           } else {
             limit = pageNumber * 10;
-            resultList = busStopCodeList.filter((item: any, i: number) => {
+            resultList = resultList.filter((item: any, i: number) => {
               return i < limit;
             });
           }
         }
       }
+      console.log('resultList.length = ', resultList.length);
 
       return resultList;
     },
