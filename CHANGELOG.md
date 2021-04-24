@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.3.0...v1.3.1) (2021-04-24)
+
+
+### Bug Fixes
+
+* 🐛 fix busStopByLatLong logic ([11254b6](https://github.com/yeukfei02/singapore-bus-arrival/commit/11254b6dd4d47c90723857ef76b6539ed1d942c1))
+* 🐛 fix if location in not sg return full busStopCodeList ([2d63d6a](https://github.com/yeukfei02/singapore-bus-arrival/commit/2d63d6a1ae6a4f55b38b866afdd24dd6ab842930))
+* 🐛 fix sls.yml, readme.md ([fd0111c](https://github.com/yeukfei02/singapore-bus-arrival/commit/fd0111ca6575ed281a9bc4e91947a8a2b6e50ba9))
+* 🐛 fix stage in deploy.yml ([ed77e4d](https://github.com/yeukfei02/singapore-bus-arrival/commit/ed77e4d6ed742c5bcc89cc207b453d750345214e))
+* 🐛 update serverless-plugin-split-stacks lib ([31c4f8e](https://github.com/yeukfei02/singapore-bus-arrival/commit/31c4f8e5fe904f7ac42699f94fde2d3250cf1d77))
+* 🐛 update sls lib ([565562c](https://github.com/yeukfei02/singapore-bus-arrival/commit/565562cc4be97cae58ca5950047c2d2a853e0414))
+
 ## [1.3.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.2.2...v1.3.0) (2021-03-16)
 
 
