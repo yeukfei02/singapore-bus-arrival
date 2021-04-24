@@ -17,7 +17,7 @@ const resolvers = {
     },
 
     busStopByLatLong: async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
-      let resultList = [];
+      let resultList: any[] = [];
 
       const latitude = args.latitude;
       const longitude = args.longitude;
@@ -41,7 +41,11 @@ const resolvers = {
 
         console.log('resultList.length = ', resultList.length);
 
-        if (resultList) {
+        if (_.isEmpty(resultList)) {
+          resultList = busStopCodeList;
+        }
+
+        if (!_.isEmpty(resultList)) {
           if (pageNumber === 1) {
             resultList = resultList.filter((item: any, i: number) => {
               return i < limit;
