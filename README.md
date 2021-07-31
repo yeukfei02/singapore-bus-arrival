@@ -4,7 +4,7 @@ singapore bus arrival times api
 
 documentation: <https://documenter.getpostman.com/view/3827865/TVeiDBKg>
 
-api url: <https://ih4d4hh2ki.execute-api.ap-southeast-1.amazonaws.com/prod/>
+api url: <https://73ddoqlmy0.execute-api.ap-southeast-1.amazonaws.com/prod/>
 
 ## Requirement
 
