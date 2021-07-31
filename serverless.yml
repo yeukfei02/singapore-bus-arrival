@@ -7,7 +7,7 @@ useDotenv: true
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   stage: prod
   region: ap-southeast-1
   apiName: singapore-bus-arrival-prod
@@ -50,7 +50,7 @@ plugins:
   - serverless-prune-plugin
   - serverless-plugin-typescript
   - serverless-offline
-  - serverless-plugin-split-stacks
+  # - serverless-plugin-split-stacks
 
 custom:
   prune:
