@@ -1,7 +1,7 @@
-import { getBusArrival } from '../api/busArrival';
-import { getBusStopByLatLong } from '../api/busStopByLatLong';
-import { getBusStopByRoadName } from '../api/busStopByRoadName';
-import { getBusStopByDescription } from '../api/busStopByDescription';
+import { getBusArrival } from '../request/busArrival';
+import { getBusStopByLatLong } from '../request/busStopByLatLong';
+import { getBusStopByRoadName } from '../request/busStopByRoadName';
+import { getBusStopByDescription } from '../request/busStopByDescription';
 import _ from 'lodash';
 
 export const busArrivalControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
