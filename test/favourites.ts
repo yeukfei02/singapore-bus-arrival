@@ -1,12 +1,10 @@
 import { ApolloServer } from 'apollo-server';
-import typeDefs from '../schema/typeDefs';
-import resolvers from '../resolvers/resolvers';
+import { schema } from '../api/schema';
 
 import { createTestClient } from 'apollo-server-testing';
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema,
 });
 const { query, mutate } = createTestClient(server);
 
