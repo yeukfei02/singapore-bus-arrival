@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.3.3...v1.4.0) (2021-08-04)
+
+
+### Features
+
+* 🎸 add nexus lib for generate schema.graphql ([f0f8da0](https://github.com/yeukfei02/singapore-bus-arrival/commit/f0f8da0e2f7210d4afd1c7354e45a74b70a4d948))
+
 ### [1.3.3](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.3.2...v1.3.3) (2021-07-31)
 
 
