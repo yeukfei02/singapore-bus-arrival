@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.4.0...v1.5.0) (2021-10-10)
+
+
+### Features
+
+* 🎸 add busStopByBusStopCode api ([940d7b2](https://github.com/yeukfei02/singapore-bus-arrival/commit/940d7b257352cdb627c878c0766d35e6343faa8f))
+
 ## [1.4.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.3.3...v1.4.0) (2021-08-04)
 
 
