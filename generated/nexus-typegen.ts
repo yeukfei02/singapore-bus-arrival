@@ -3,255 +3,288 @@
  * Do not make changes to this file directly
  */
 
-
-
-
-
-
-
 declare global {
   interface NexusGen extends NexusGenTypes {}
 }
 
 export interface NexusGenInputs {
-  AddFavouriteItem: { // input type
+  AddFavouriteItem: {
+    // input type
     busStopCode: string; // String!
     description: string; // String!
     latitude: number; // Float!
     longitude: number; // Float!
     roadName: string; // String!
-  }
-  AddFavourites: { // input type
+  };
+  AddFavourites: {
+    // input type
     installationId: string; // String!
     item?: NexusGenInputs['AddFavouriteItem'] | null; // AddFavouriteItem
-  }
-  DeleteFavourites: { // input type
+  };
+  DeleteFavourites: {
+    // input type
     id: string; // String!
     installationId: string; // String!
-  }
+  };
 }
 
-export interface NexusGenEnums {
-}
+export interface NexusGenEnums {}
 
 export interface NexusGenScalars {
-  String: string
-  Int: number
-  Float: number
-  Boolean: boolean
-  ID: string
+  String: string;
+  Int: number;
+  Float: number;
+  Boolean: boolean;
+  ID: string;
 }
 
 export interface NexusGenObjects {
-  AddFavouritesResult: { // root type
+  AddFavouritesResult: {
+    // root type
     status: boolean; // Boolean!
-  }
-  BusArrival: { // root type
+  };
+  BusArrival: {
+    // root type
     busStopCode: string; // String!
     services: NexusGenRootTypes['Services'][]; // [Services!]!
-  }
-  BusStopCode: { // root type
+  };
+  BusStopCode: {
+    // root type
     busStopCode: string; // String!
     description: string; // String!
     latitude: number; // Float!
     longitude: number; // Float!
     roadName: string; // String!
-  }
-  DeleteFavouritesByIdResult: { // root type
+  };
+  DeleteFavouritesByIdResult: {
+    // root type
     status: boolean; // Boolean!
-  }
-  FavouriteItem: { // root type
+  };
+  FavouriteItem: {
+    // root type
     bus_stop_code: string; // String!
     description: string; // String!
     latitude: number; // Float!
     longitude: number; // Float!
     road_name: string; // String!
-  }
-  Favourites: { // root type
+  };
+  Favourites: {
+    // root type
     createdAt: string; // String!
     id: string; // String!
     installation_id: string; // String!
     item: NexusGenRootTypes['FavouriteItem']; // FavouriteItem!
     updatedAt: string; // String!
-  }
+  };
   Mutation: {};
-  NextBus: { // root type
+  NextBus: {
+    // root type
     estimatedArrival: string; // String!
     feature: string; // String!
     latitude: string; // String!
     load: string; // String!
     longitude: string; // String!
     type: string; // String!
-  }
+  };
   Query: {};
-  Services: { // root type
+  Services: {
+    // root type
     busNumber: string; // String!
     nextBus: NexusGenRootTypes['NextBus'][]; // [NextBus!]!
     operator: string; // String!
-  }
+  };
 }
 
-export interface NexusGenInterfaces {
-}
+export interface NexusGenInterfaces {}
 
-export interface NexusGenUnions {
-}
+export interface NexusGenUnions {}
 
-export type NexusGenRootTypes = NexusGenObjects
+export type NexusGenRootTypes = NexusGenObjects;
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars;
 
 export interface NexusGenFieldTypes {
-  AddFavouritesResult: { // field return type
+  AddFavouritesResult: {
+    // field return type
     status: boolean; // Boolean!
-  }
-  BusArrival: { // field return type
+  };
+  BusArrival: {
+    // field return type
     busStopCode: string; // String!
     services: NexusGenRootTypes['Services'][]; // [Services!]!
-  }
-  BusStopCode: { // field return type
+  };
+  BusStopCode: {
+    // field return type
     busStopCode: string; // String!
     description: string; // String!
     latitude: number; // Float!
     longitude: number; // Float!
     roadName: string; // String!
-  }
-  DeleteFavouritesByIdResult: { // field return type
+  };
+  DeleteFavouritesByIdResult: {
+    // field return type
     status: boolean; // Boolean!
-  }
-  FavouriteItem: { // field return type
+  };
+  FavouriteItem: {
+    // field return type
     bus_stop_code: string; // String!
     description: string; // String!
     latitude: number; // Float!
     longitude: number; // Float!
     road_name: string; // String!
-  }
-  Favourites: { // field return type
+  };
+  Favourites: {
+    // field return type
     createdAt: string; // String!
     id: string; // String!
     installation_id: string; // String!
     item: NexusGenRootTypes['FavouriteItem']; // FavouriteItem!
     updatedAt: string; // String!
-  }
-  Mutation: { // field return type
+  };
+  Mutation: {
+    // field return type
     addFavourites: NexusGenRootTypes['AddFavouritesResult']; // AddFavouritesResult!
     deleteFavouritesById: NexusGenRootTypes['DeleteFavouritesByIdResult']; // DeleteFavouritesByIdResult!
-  }
-  NextBus: { // field return type
+  };
+  NextBus: {
+    // field return type
     estimatedArrival: string; // String!
     feature: string; // String!
     latitude: string; // String!
     load: string; // String!
     longitude: string; // String!
     type: string; // String!
-  }
-  Query: { // field return type
+  };
+  Query: {
+    // field return type
     busArrival: NexusGenRootTypes['BusArrival']; // BusArrival!
+    busStopByBusStopCode: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByDescription: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByLatLong: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByRoadName: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     getFavouritesByInstallationId: NexusGenRootTypes['Favourites'][]; // [Favourites!]!
-  }
-  Services: { // field return type
+  };
+  Services: {
+    // field return type
     busNumber: string; // String!
     nextBus: NexusGenRootTypes['NextBus'][]; // [NextBus!]!
     operator: string; // String!
-  }
+  };
 }
 
 export interface NexusGenFieldTypeNames {
-  AddFavouritesResult: { // field return type name
-    status: 'Boolean'
-  }
-  BusArrival: { // field return type name
-    busStopCode: 'String'
-    services: 'Services'
-  }
-  BusStopCode: { // field return type name
-    busStopCode: 'String'
-    description: 'String'
-    latitude: 'Float'
-    longitude: 'Float'
-    roadName: 'String'
-  }
-  DeleteFavouritesByIdResult: { // field return type name
-    status: 'Boolean'
-  }
-  FavouriteItem: { // field return type name
-    bus_stop_code: 'String'
-    description: 'String'
-    latitude: 'Float'
-    longitude: 'Float'
-    road_name: 'String'
-  }
-  Favourites: { // field return type name
-    createdAt: 'String'
-    id: 'String'
-    installation_id: 'String'
-    item: 'FavouriteItem'
-    updatedAt: 'String'
-  }
-  Mutation: { // field return type name
-    addFavourites: 'AddFavouritesResult'
-    deleteFavouritesById: 'DeleteFavouritesByIdResult'
-  }
-  NextBus: { // field return type name
-    estimatedArrival: 'String'
-    feature: 'String'
-    latitude: 'String'
-    load: 'String'
-    longitude: 'String'
-    type: 'String'
-  }
-  Query: { // field return type name
-    busArrival: 'BusArrival'
-    busStopByDescription: 'BusStopCode'
-    busStopByLatLong: 'BusStopCode'
-    busStopByRoadName: 'BusStopCode'
-    getFavouritesByInstallationId: 'Favourites'
-  }
-  Services: { // field return type name
-    busNumber: 'String'
-    nextBus: 'NextBus'
-    operator: 'String'
-  }
+  AddFavouritesResult: {
+    // field return type name
+    status: 'Boolean';
+  };
+  BusArrival: {
+    // field return type name
+    busStopCode: 'String';
+    services: 'Services';
+  };
+  BusStopCode: {
+    // field return type name
+    busStopCode: 'String';
+    description: 'String';
+    latitude: 'Float';
+    longitude: 'Float';
+    roadName: 'String';
+  };
+  DeleteFavouritesByIdResult: {
+    // field return type name
+    status: 'Boolean';
+  };
+  FavouriteItem: {
+    // field return type name
+    bus_stop_code: 'String';
+    description: 'String';
+    latitude: 'Float';
+    longitude: 'Float';
+    road_name: 'String';
+  };
+  Favourites: {
+    // field return type name
+    createdAt: 'String';
+    id: 'String';
+    installation_id: 'String';
+    item: 'FavouriteItem';
+    updatedAt: 'String';
+  };
+  Mutation: {
+    // field return type name
+    addFavourites: 'AddFavouritesResult';
+    deleteFavouritesById: 'DeleteFavouritesByIdResult';
+  };
+  NextBus: {
+    // field return type name
+    estimatedArrival: 'String';
+    feature: 'String';
+    latitude: 'String';
+    load: 'String';
+    longitude: 'String';
+    type: 'String';
+  };
+  Query: {
+    // field return type name
+    busArrival: 'BusArrival';
+    busStopByBusStopCode: 'BusStopCode';
+    busStopByDescription: 'BusStopCode';
+    busStopByLatLong: 'BusStopCode';
+    busStopByRoadName: 'BusStopCode';
+    getFavouritesByInstallationId: 'Favourites';
+  };
+  Services: {
+    // field return type name
+    busNumber: 'String';
+    nextBus: 'NextBus';
+    operator: 'String';
+  };
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    addFavourites: { // args
+    addFavourites: {
+      // args
       data: NexusGenInputs['AddFavourites']; // AddFavourites!
-    }
-    deleteFavouritesById: { // args
+    };
+    deleteFavouritesById: {
+      // args
       data: NexusGenInputs['DeleteFavourites']; // DeleteFavourites!
-    }
-  }
+    };
+  };
   Query: {
-    busArrival: { // args
+    busArrival: {
+      // args
       busStopCode: string; // String!
-    }
-    busStopByDescription: { // args
+    };
+    busStopByBusStopCode: {
+      // args
+      busStopCode: string; // String!
+    };
+    busStopByDescription: {
+      // args
       description: string; // String!
-    }
-    busStopByLatLong: { // args
+    };
+    busStopByLatLong: {
+      // args
       latitude: number; // Float!
       longitude: number; // Float!
       pageNumber: number; // Int!
-    }
-    busStopByRoadName: { // args
+    };
+    busStopByRoadName: {
+      // args
       roadName: string; // String!
-    }
-    getFavouritesByInstallationId: { // args
+    };
+    getFavouritesByInstallationId: {
+      // args
       installationId: string; // String!
-    }
-  }
+    };
+  };
 }
 
-export interface NexusGenAbstractTypeMembers {
-}
+export interface NexusGenAbstractTypeMembers {}
 
-export interface NexusGenTypeInterfaces {
-}
+export interface NexusGenTypeInterfaces {}
 
 export type NexusGenObjectNames = keyof NexusGenObjects;
 
@@ -271,11 +304,11 @@ export type NexusGenAbstractsUsingStrategyResolveType = never;
 
 export type NexusGenFeaturesConfig = {
   abstractTypeStrategies: {
-    isTypeOf: false
-    resolveType: true
-    __typename: false
-  }
-}
+    isTypeOf: false;
+    resolveType: true;
+    __typename: false;
+  };
+};
 
 export interface NexusGenTypes {
   context: any;
@@ -294,8 +327,13 @@ export interface NexusGenTypes {
   scalarNames: NexusGenScalarNames;
   unionNames: NexusGenUnionNames;
   allInputTypes: NexusGenTypes['inputNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['scalarNames'];
-  allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
-  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
+  allOutputTypes:
+    | NexusGenTypes['objectNames']
+    | NexusGenTypes['enumNames']
+    | NexusGenTypes['unionNames']
+    | NexusGenTypes['interfaceNames']
+    | NexusGenTypes['scalarNames'];
+  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes'];
   abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
   abstractTypeMembers: NexusGenAbstractTypeMembers;
   objectsUsingAbstractStrategyIsTypeOf: NexusGenObjectsUsingAbstractStrategyIsTypeOf;
@@ -303,18 +341,11 @@ export interface NexusGenTypes {
   features: NexusGenFeaturesConfig;
 }
 
-
 declare global {
-  interface NexusGenPluginTypeConfig<TypeName extends string> {
-  }
-  interface NexusGenPluginInputTypeConfig<TypeName extends string> {
-  }
-  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
-  }
-  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
-  }
-  interface NexusGenPluginSchemaConfig {
-  }
-  interface NexusGenPluginArgConfig {
-  }
+  interface NexusGenPluginTypeConfig<TypeName extends string> {}
+  interface NexusGenPluginInputTypeConfig<TypeName extends string> {}
+  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {}
+  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {}
+  interface NexusGenPluginSchemaConfig {}
+  interface NexusGenPluginArgConfig {}
 }

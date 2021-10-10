@@ -73,6 +73,7 @@ type NextBus {
 
 type Query {
   busArrival(busStopCode: String!): BusArrival!
+  busStopByBusStopCode(busStopCode: String!): [BusStopCode!]!
   busStopByDescription(description: String!): [BusStopCode!]!
   busStopByLatLong(latitude: Float!, longitude: Float!, pageNumber: Int!): [BusStopCode!]!
   busStopByRoadName(roadName: String!): [BusStopCode!]!

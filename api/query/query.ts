@@ -8,6 +8,7 @@ import {
   busStopByLatLongControllerFunc,
   busStopByRoadNameControllerFunc,
   busStopByDescriptionControllerFunc,
+  busStopByBusStopCodeControllerFunc,
 } from '../../controller/bus';
 import { getFavouritesByInstallationIdControllerFunc } from '../../controller/favourites';
 
@@ -16,7 +17,7 @@ export const busArrival = queryField('busArrival', {
   args: {
     busStopCode: nonNull(stringArg()),
   },
-  resolve: busArrivalControllerFunc,
+  resolve: busArrivalControllerFunc as any,
 });
 
 export const busStopByLatLong = queryField('busStopByLatLong', {
@@ -43,6 +44,14 @@ export const busStopByDescription = queryField('busStopByDescription', {
     description: nonNull(stringArg()),
   },
   resolve: busStopByDescriptionControllerFunc,
+});
+
+export const busStopByBusStopCode = queryField('busStopByBusStopCode', {
+  type: nonNull(list(nonNull(BusStopCode))),
+  args: {
+    busStopCode: nonNull(stringArg()),
+  },
+  resolve: busStopByBusStopCodeControllerFunc,
 });
 
 export const getFavouritesByInstallationId = queryField('getFavouritesByInstallationId', {
