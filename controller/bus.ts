@@ -2,6 +2,7 @@ import { getBusArrival } from '../request/busArrival';
 import { getBusStopByLatLong } from '../request/busStopByLatLong';
 import { getBusStopByRoadName } from '../request/busStopByRoadName';
 import { getBusStopByDescription } from '../request/busStopByDescription';
+import { getBusStopByBusStopCode } from '../request/busStopByBusStopCode';
 import _ from 'lodash';
 
 export const busArrivalControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
@@ -90,6 +91,22 @@ export const busStopByDescriptionControllerFunc = async (
   let busStopCodeList = [];
   if (description) {
     busStopCodeList = await getBusStopByDescription(description);
+  }
+
+  return busStopCodeList;
+};
+
+export const busStopByBusStopCodeControllerFunc = async (
+  parent: any,
+  args: any,
+  context: any,
+  info: any,
+): Promise<any[]> => {
+  const busStopCode = args.busStopCode;
+
+  let busStopCodeList = [];
+  if (busStopCode) {
+    busStopCodeList = await getBusStopByBusStopCode(busStopCode);
   }
 
   return busStopCodeList;
