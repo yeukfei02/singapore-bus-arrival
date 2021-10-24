@@ -32,6 +32,7 @@ provider:
     shouldStartNameWithService: true
     description: singapore bus arrival prod
   lambdaHashingVersion: 20201221
+  timeout: 30
 
 functions:
   graphql:
