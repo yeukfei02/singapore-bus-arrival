@@ -4,6 +4,7 @@ import { getBusStopByRoadName } from '../request/busStopByRoadName';
 import { getBusStopByDescription } from '../request/busStopByDescription';
 import { getBusStopByBusStopCode } from '../request/busStopByBusStopCode';
 import { getBusServiceByBusServiceNo } from '../request/busServiceByBusServiceNo';
+import { getBusRouteByBusServiceNo } from '../request/busRouteByBusServiceNo';
 import _ from 'lodash';
 
 export const busArrivalControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
@@ -127,4 +128,20 @@ export const busServiceByBusServiceNoControllerFunc = async (
   }
 
   return busServiceList;
+};
+
+export const busRouteByBusServiceNoControllerFunc = async (
+  parent: any,
+  args: any,
+  context: any,
+  info: any,
+): Promise<any[]> => {
+  const busServiceNo = args.busServiceNo;
+
+  let busRouteList = [];
+  if (busServiceNo) {
+    busRouteList = await getBusRouteByBusServiceNo(busServiceNo);
+  }
+
+  return busRouteList;
 };
