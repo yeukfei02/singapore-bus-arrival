@@ -1,100 +1,114 @@
-import { ApolloServer } from 'apollo-server';
-import { schema } from '../api/schema';
+import { GraphQLClient, gql } from 'graphql-request';
 
-import { createTestClient } from 'apollo-server-testing';
-
-const server = new ApolloServer({
-  schema,
-});
-const { query, mutate } = createTestClient(server);
+const rootUrl = 'https://73ddoqlmy0.execute-api.ap-southeast-1.amazonaws.com/prod';
+const graphQLClient = new GraphQLClient(rootUrl);
 
 export const favouritesTest = (): void => {
-  describe('favourites test', () => {
-    test('get favourites by installation id test', async () => {
-      const GET_FAVOURITES_BY_INSTALLATION_ID = `
-        query getFavouritesByInstallationId ($installationId: String!) {
-            getFavouritesByInstallationId (installationId: $installationId) {
-                id
-                installation_id
-                item {
-                    bus_stop_code
-                    description
-                    latitude
-                    longitude
-                    road_name
-                }
-                createdAt
-                updatedAt
+  describe('favourites', () => {
+    test('get favourites by installation id', async () => {
+      const GET_FAVOURITES_BY_INSTALLATION_ID = gql`
+        query getFavouritesByInstallationId($installationId: String!) {
+          getFavouritesByInstallationId(installationId: $installationId) {
+            id
+            installation_id
+            item {
+              bus_stop_code
+              description
+              latitude
+              longitude
+              road_name
             }
+            createdAt
+            updatedAt
+          }
         }
       `;
-      const response = await query({
-        query: GET_FAVOURITES_BY_INSTALLATION_ID,
-        variables: { installationId: '57D83666-41E2-4991-B41D-3860CDFAB699' },
-      });
+      const variables = { installationId: '57D83666-41E2-4991-B41D-3860CDFAB699' };
+      const response = await graphQLClient.request(GET_FAVOURITES_BY_INSTALLATION_ID, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.getFavouritesByInstallationId).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.getFavouritesByInstallationId).toBeDefined();
     });
 
-    test('add favourites test', async () => {
-      const ADD_FAVOURITES = `
-            mutation addFavourites ($data: AddFavourites!) {
-                addFavourites (data: $data) {
-                    status
-                }
-            }
-        `;
-      const response = await mutate({
-        mutation: ADD_FAVOURITES,
-        variables: {
-          data: {
-            installationId: '57D83666-41E2-4991-B41D-3860CDFAB699',
-            item: {
-              busStopCode: '64189',
-              description: 'Aft Old Tampines Rd',
-              latitude: 1.37693109577247,
-              longitude: 103.91392221641736,
-              roadName: 'Tampines Rd',
-            },
-          },
-        },
-      });
-      console.log('response = ', response);
-
-      expect(response.data).toBeDefined();
-      expect(response.data.addFavourites).toBeDefined();
-      expect(response.data.addFavourites.status).toBeDefined();
-      expect(response.data.addFavourites.status).toBe(true);
-      expect(response.errors).toBeUndefined();
-    });
-
-    test('delete favourites by id test', async () => {
-      const DELETE_FAVOURITES_BY_ID = `
-        mutation deleteFavouritesById ($data: DeleteFavourites!) {
-            deleteFavouritesById (data: $data) {
-                status
-            }
+    test('add favourites', async () => {
+      const ADD_FAVOURITES = gql`
+        mutation addFavourites($data: AddFavourites!) {
+          addFavourites(data: $data) {
+            status
+          }
         }
-          `;
-      const response = await mutate({
-        mutation: DELETE_FAVOURITES_BY_ID,
-        variables: {
-          data: {
-            id: '7b9e8fb2-29b6-41b6-90f0-6ed8b26f79eb',
-            installationId: '6b5b76c6-597e-48d0-9bfa-ac4a0557b168',
+      `;
+      const variables = {
+        data: {
+          installationId: '57D83666-41E2-4991-B41D-3860CDFAB699',
+          item: {
+            busStopCode: '64189',
+            description: 'Aft Old Tampines Rd',
+            latitude: 1.37693109577247,
+            longitude: 103.91392221641736,
+            roadName: 'Tampines Rd',
           },
         },
-      });
+      };
+      const response = await graphQLClient.request(ADD_FAVOURITES, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.deleteFavouritesById).toBeDefined();
-      expect(response.data.deleteFavouritesById.status).toBeDefined();
-      expect(response.data.deleteFavouritesById.status).toBe(true);
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.addFavourites).toBeDefined();
+      expect(response.addFavourites.status).toBeDefined();
+      expect(response.addFavourites.status).toBe(true);
+    });
+
+    test('delete favourites by id', async () => {
+      const favouriteId = await getFavouriteId();
+
+      const DELETE_FAVOURITES_BY_ID = gql`
+        mutation deleteFavouritesById($data: DeleteFavourites!) {
+          deleteFavouritesById(data: $data) {
+            status
+          }
+        }
+      `;
+      const variables = {
+        data: {
+          id: favouriteId,
+          installationId: '6b5b76c6-597e-48d0-9bfa-ac4a0557b168',
+        },
+      };
+      const response = await graphQLClient.request(DELETE_FAVOURITES_BY_ID, variables);
+      console.log('response = ', response);
+
+      expect(response).toBeDefined();
+      expect(response.deleteFavouritesById).toBeDefined();
+      expect(response.deleteFavouritesById.status).toBeDefined();
+      expect(response.deleteFavouritesById.status).toBe(true);
     });
   });
 };
+
+async function getFavouriteId() {
+  const GET_FAVOURITES_BY_INSTALLATION_ID = gql`
+    query getFavouritesByInstallationId($installationId: String!) {
+      getFavouritesByInstallationId(installationId: $installationId) {
+        id
+        installation_id
+        item {
+          bus_stop_code
+          description
+          latitude
+          longitude
+          road_name
+        }
+        createdAt
+        updatedAt
+      }
+    }
+  `;
+  const variables = { installationId: '57D83666-41E2-4991-B41D-3860CDFAB699' };
+  const response = await graphQLClient.request(GET_FAVOURITES_BY_INSTALLATION_ID, variables);
+  console.log('response = ', response);
+
+  const favouriteById = response.getFavouritesByInstallationId[0].id;
+  return favouriteById;
+}
