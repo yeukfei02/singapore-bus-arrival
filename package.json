@@ -57,6 +57,7 @@
     "package": "serverless package",
     "dashboard": "serverless dashboard",
     "remove": "serverless remove",
+    "generate:nexus": "npx ts-node --transpile-only ./api/schema.ts",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "test": "jest",
     "commit": "git-cz",
@@ -64,8 +65,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "yarn lint"
+      "pre-commit": "yarn run generate:nexus && yarn lint",
+      "pre-push": "yarn run generate:nexus && yarn lint"
     }
   }
 }
