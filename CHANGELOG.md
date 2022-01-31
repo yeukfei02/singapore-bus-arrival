@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.7.0...v1.8.0) (2022-01-12)
+
+
+### Features
+
+* 🎸 add .env.sample ([397eab3](https://github.com/yeukfei02/singapore-bus-arrival/commit/397eab31e168b0c50b620d2b59a876fe8897622b))
+* 🎸 add generate:nexus script ([699257b](https://github.com/yeukfei02/singapore-bus-arrival/commit/699257b61a0a5507a57cc5d2196c10dc728cad11))
+* 🎸 add graphql-request ([d3f92ef](https://github.com/yeukfei02/singapore-bus-arrival/commit/d3f92ef6750f4a13c743c7d31aa94a95ee19bcca))
+* 🎸 add semgrep.yml ([b545f76](https://github.com/yeukfei02/singapore-bus-arrival/commit/b545f7609c18b4a138d73e4cd28ca1b2a37679dd))
+* 🎸 update sls lib and use arm64 arch ([ab2d43a](https://github.com/yeukfei02/singapore-bus-arrival/commit/ab2d43a5e780712d33523c12d45b1acca2d4f683))
+
+
+### Bug Fixes
+
+* 🐛 add missing var ([83e366e](https://github.com/yeukfei02/singapore-bus-arrival/commit/83e366e26cefa8023b45cb0d5832d173e7e97923))
+* 🐛 add timeout to 30 sec ([14e8607](https://github.com/yeukfei02/singapore-bus-arrival/commit/14e86072533bed38aaa6efbe6239952f19155ad2))
+* 🐛 fix yarn.lock ([37ce4eb](https://github.com/yeukfei02/singapore-bus-arrival/commit/37ce4eb6a13d13bf78c36181468a854b3ebebe4d))
+
 ## [1.7.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.6.0...v1.7.0) (2021-10-24)
 
 
