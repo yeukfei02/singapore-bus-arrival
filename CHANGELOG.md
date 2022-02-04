@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.8.0...v1.8.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* 🐛 update sls lib ([94ff371](https://github.com/yeukfei02/singapore-bus-arrival/commit/94ff371e0faf54583d8e756b3efdbcec7edd3790))
+
 ## [1.8.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.7.0...v1.8.0) (2022-01-12)
 
 
