@@ -46,9 +46,7 @@ export const busStopByLatLongControllerFunc = async (
 
     if (_.isEmpty(resultList)) {
       resultList = busStopCodeList;
-    }
-
-    if (!_.isEmpty(resultList)) {
+    } else {
       if (pageNumber === 1) {
         resultList = resultList.filter((item: any, i: number) => {
           return i < limit;
