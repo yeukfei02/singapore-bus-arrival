@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import Favourites from '../model/Favourites';
 
@@ -18,7 +19,9 @@ export const getFavouritesByInstallationIdControllerFunc = async (
     });
   }
 
-  return resultList;
+  const formattedResultList = _.orderBy(resultList, ['createdAt'], ['desc']);
+
+  return formattedResultList;
 };
 
 export const addFavouritesControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any> => {
