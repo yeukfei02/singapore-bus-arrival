@@ -14,9 +14,10 @@ export const getFavouritesByInstallationIdControllerFunc = async (
   if (installationId) {
     const favourites = await Favourites.scan({ installation_id: { eq: installationId } }).exec();
     const favouritesList = favourites.toJSON();
-    favouritesList.forEach((item: any, i: number) => {
+    for (let index = 0; index < favouritesList.length; index++) {
+      const item = favouritesList[index];
       resultList.push(item);
-    });
+    }
   }
 
   const formattedResultList = _.orderBy(resultList, ['createdAt'], ['desc']);
