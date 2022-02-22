@@ -14,7 +14,8 @@ export const getBusStopByDescription = async (description: string): Promise<any>
   while (loopStatus) {
     const responseDataValue = await fetchBusStop(skipNum);
     if (!_.isEmpty(responseDataValue)) {
-      responseDataValue.forEach((item: Value, i: number) => {
+      for (let index = 0; index < responseDataValue.length; index++) {
+        const item = responseDataValue[index];
         if (item.Description.toLowerCase().includes(description.toLowerCase())) {
           const obj = {
             busStopCode: item.BusStopCode,
@@ -25,7 +26,7 @@ export const getBusStopByDescription = async (description: string): Promise<any>
           };
           busStopCodeList.push(obj);
         }
-      });
+      }
 
       skipNum += 500;
     } else {

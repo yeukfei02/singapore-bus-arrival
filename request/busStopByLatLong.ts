@@ -14,7 +14,8 @@ export const getBusStopByLatLong = async (): Promise<any> => {
   while (loopStatus) {
     const responseDataValue = await fetchBusStop(skipNum);
     if (!_.isEmpty(responseDataValue)) {
-      responseDataValue.forEach((item: Value, i: number) => {
+      for (let index = 0; index < responseDataValue.length; index++) {
+        const item = responseDataValue[index];
         const obj = {
           busStopCode: item.BusStopCode,
           roadName: item.RoadName,
@@ -23,7 +24,7 @@ export const getBusStopByLatLong = async (): Promise<any> => {
           longitude: item.Longitude,
         };
         busStopCodeList.push(obj);
-      });
+      }
 
       skipNum += 500;
     } else {
@@ -61,10 +62,8 @@ async function fetchBusStop(skipNum?: number) {
     const responseData: BusStopCode = response.data;
     console.log('responseData = ', responseData);
 
-    if (responseData) {
-      if (responseData.value) {
-        valueList = responseData.value;
-      }
+    if (responseData && responseData.value) {
+      valueList = responseData.value;
     }
   }
 
