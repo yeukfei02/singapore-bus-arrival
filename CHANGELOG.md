@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.8.1...v1.9.0) (2022-02-22)
+
+
+### Features
+
+* 🎸 add getFavouritesByInstallationId createdat desc ([b83d0fe](https://github.com/yeukfei02/singapore-bus-arrival/commit/b83d0fe28b951d64beea8fe94d32251a26245bcf))
+
+
+### Bug Fixes
+
+* 🐛 fix busStopByLatLongControllerFunc ([5e69a2f](https://github.com/yeukfei02/singapore-bus-arrival/commit/5e69a2f3c8611702178cdacf7a4e0db4ac9fe49f))
+* 🐛 fix lat long and foreach loop ([53adb00](https://github.com/yeukfei02/singapore-bus-arrival/commit/53adb0028743ce74b17244413939a393a5977819))
+
 ### [1.8.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.8.0...v1.8.1) (2022-01-31)
 
 
