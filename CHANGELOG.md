@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.9.0...v1.9.1) (2022-03-18)
+
+
+### Bug Fixes
+
+* 🐛 update sls to v3 and remove postman collection ([e400123](https://github.com/yeukfei02/singapore-bus-arrival/commit/e400123af3521aa0ffb8db16de554efe388f17d2))
+
 ## [1.9.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.8.1...v1.9.0) (2022-02-22)
 
 
