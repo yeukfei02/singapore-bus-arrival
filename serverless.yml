@@ -2,7 +2,7 @@ org: yeukfei05
 app: singapore-bus-arrival
 service: singapore-bus-arrival
 
-frameworkVersion: '2'
+frameworkVersion: '3'
 useDotenv: true
 
 provider:
