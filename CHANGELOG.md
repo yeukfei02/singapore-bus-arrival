@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.2](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.9.1...v1.9.2) (2022-04-06)
+
+
+### Bug Fixes
+
+* 🐛 add order by ([4c6b3dc](https://github.com/yeukfei02/singapore-bus-arrival/commit/4c6b3dc0e6860e575691af6d9b6e60d11f48fe18))
+* 🐛 update test case ([09b48f0](https://github.com/yeukfei02/singapore-bus-arrival/commit/09b48f0ac5170f622ba566738a5359787aafde4a))
+
 ### [1.9.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.9.0...v1.9.1) (2022-03-18)
 
 
