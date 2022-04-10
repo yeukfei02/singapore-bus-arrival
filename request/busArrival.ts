@@ -82,7 +82,8 @@ export const getBusArrival = async (busStopCode: string): Promise<any> => {
           });
 
           if (servicesList) {
-            busArrival['services'] = servicesList;
+            const sortedServicesList = _.orderBy(servicesList, ['busNumber'], ['asc']);
+            busArrival['services'] = sortedServicesList;
           }
         }
       }
