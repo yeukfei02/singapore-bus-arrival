@@ -46,6 +46,20 @@ export interface NexusGenObjects {
   AddFavouritesResult: { // root type
     status: boolean; // Boolean!
   }
+  AllBusRoute: { // root type
+    busStopCode: string; // String!
+    direction: number; // Int!
+    distance: number; // Float!
+    operator: string; // String!
+    satFirstBus: string; // String!
+    satLastBus: string; // String!
+    serviceNo: string; // String!
+    stopSequence: number; // Int!
+    sunFirstBus: string; // String!
+    sunLastBus: string; // String!
+    wdFirstBus: string; // String!
+    wdLastBus: string; // String!
+  }
   AllBusService: { // root type
     amOffpeakFreq: string; // String!
     amPeakFreq: string; // String!
@@ -137,6 +151,20 @@ export interface NexusGenFieldTypes {
   AddFavouritesResult: { // field return type
     status: boolean; // Boolean!
   }
+  AllBusRoute: { // field return type
+    busStopCode: string; // String!
+    direction: number; // Int!
+    distance: number; // Float!
+    operator: string; // String!
+    satFirstBus: string; // String!
+    satLastBus: string; // String!
+    serviceNo: string; // String!
+    stopSequence: number; // Int!
+    sunFirstBus: string; // String!
+    sunLastBus: string; // String!
+    wdFirstBus: string; // String!
+    wdLastBus: string; // String!
+  }
   AllBusService: { // field return type
     amOffpeakFreq: string; // String!
     amPeakFreq: string; // String!
@@ -210,6 +238,7 @@ export interface NexusGenFieldTypes {
     type: string; // String!
   }
   Query: { // field return type
+    allBusRoute: NexusGenRootTypes['AllBusRoute'][]; // [AllBusRoute!]!
     allBusService: NexusGenRootTypes['AllBusService'][]; // [AllBusService!]!
     busArrival: NexusGenRootTypes['BusArrival']; // BusArrival!
     busRouteByBusServiceNo: NexusGenRootTypes['BusRoute'][]; // [BusRoute!]!
@@ -230,6 +259,20 @@ export interface NexusGenFieldTypes {
 export interface NexusGenFieldTypeNames {
   AddFavouritesResult: { // field return type name
     status: 'Boolean'
+  }
+  AllBusRoute: { // field return type name
+    busStopCode: 'String'
+    direction: 'Int'
+    distance: 'Float'
+    operator: 'String'
+    satFirstBus: 'String'
+    satLastBus: 'String'
+    serviceNo: 'String'
+    stopSequence: 'Int'
+    sunFirstBus: 'String'
+    sunLastBus: 'String'
+    wdFirstBus: 'String'
+    wdLastBus: 'String'
   }
   AllBusService: { // field return type name
     amOffpeakFreq: 'String'
@@ -304,6 +347,7 @@ export interface NexusGenFieldTypeNames {
     type: 'String'
   }
   Query: { // field return type name
+    allBusRoute: 'AllBusRoute'
     allBusService: 'AllBusService'
     busArrival: 'BusArrival'
     busRouteByBusServiceNo: 'BusRoute'

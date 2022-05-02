@@ -19,6 +19,21 @@ type AddFavouritesResult {
   status: Boolean!
 }
 
+type AllBusRoute {
+  busStopCode: String!
+  direction: Int!
+  distance: Float!
+  operator: String!
+  satFirstBus: String!
+  satLastBus: String!
+  serviceNo: String!
+  stopSequence: Int!
+  sunFirstBus: String!
+  sunLastBus: String!
+  wdFirstBus: String!
+  wdLastBus: String!
+}
+
 type AllBusService {
   amOffpeakFreq: String!
   amPeakFreq: String!
@@ -107,6 +122,7 @@ type NextBus {
 }
 
 type Query {
+  allBusRoute: [AllBusRoute!]!
   allBusService: [AllBusService!]!
   busArrival(busStopCode: String!): BusArrival!
   busRouteByBusServiceNo(busServiceNo: String!): [BusRoute!]!

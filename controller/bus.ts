@@ -4,6 +4,7 @@ import { getBusStopByRoadName } from '../request/busStopByRoadName';
 import { getBusStopByDescription } from '../request/busStopByDescription';
 import { getBusStopByBusStopCode } from '../request/busStopByBusStopCode';
 import { getAllBusService } from '../request/allBusService';
+import { getAllBusRoute } from '../request/allBusRoute';
 import { getBusServiceByBusServiceNo } from '../request/busServiceByBusServiceNo';
 import { getBusRouteByBusServiceNo } from '../request/busRouteByBusServiceNo';
 import _ from 'lodash';
@@ -123,6 +124,14 @@ export const allBusServiceControllerFunc = async (): Promise<any> => {
   allBusServiceList = _.orderBy(allBusServiceList, ['serviceNo'], ['asc']);
 
   return allBusServiceList;
+};
+
+export const allBusRouteControllerFunc = async (): Promise<any> => {
+  let allBusRouteList = await getAllBusRoute();
+
+  allBusRouteList = _.orderBy(allBusRouteList, ['serviceNo'], ['asc']);
+
+  return allBusRouteList;
 };
 
 export const busServiceByBusServiceNoControllerFunc = async (
