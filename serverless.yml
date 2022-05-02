@@ -36,6 +36,28 @@ provider:
   timeout: 30
 
 functions:
+  allBusService:
+    handler: src/allBusService/handler.allBusService
+    events:
+      - http:
+          path: /all-bus-service
+          method: get
+          cors: true
+      - schedule: cron(0 1 1 * ? *)
+    timeout: 900
+    memorySize: 3000
+
+  # allBusRoute:
+  #   handler: src/allBusRoute/handler.allBusRoute
+  #   events:
+  #     - http:
+  #         path: /all-bus-route
+  #         method: get
+  #         cors: true
+  #     - schedule: cron(0 1 1 * ? *)
+  #   timeout: 900
+  #   memorySize: 10000
+
   graphql:
     handler: src/graphql/handler.graphqlHandler
     events:
