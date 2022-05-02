@@ -93,10 +93,8 @@ async function fetchBusService(skipNum?: number) {
     const responseData: BusService = response.data;
     console.log('responseData = ', responseData);
 
-    if (responseData) {
-      if (responseData.value) {
-        valueList = responseData.value;
-      }
+    if (responseData && responseData.value) {
+      valueList = responseData.value;
     }
   }
 

@@ -1,6 +1,7 @@
 import { queryField, nonNull, list, stringArg, floatArg, intArg } from 'nexus';
 import { BusArrival } from '../types/busArrival';
 import { BusStopCode } from '../types/busStopCode';
+import { AllBusService } from '../types/allBusService';
 import { BusService } from '../types/busService';
 import { BusRoute } from '../types/busRoute';
 import { Favourites } from '../types/favourites';
@@ -11,6 +12,7 @@ import {
   busStopByRoadNameControllerFunc,
   busStopByDescriptionControllerFunc,
   busStopByBusStopCodeControllerFunc,
+  allBusServiceControllerFunc,
   busServiceByBusServiceNoControllerFunc,
   busRouteByBusServiceNoControllerFunc,
 } from '../../controller/bus';
@@ -56,6 +58,12 @@ export const busStopByBusStopCode = queryField('busStopByBusStopCode', {
     busStopCode: nonNull(stringArg()),
   },
   resolve: busStopByBusStopCodeControllerFunc,
+});
+
+export const allBusService = queryField('allBusService', {
+  type: nonNull(list(nonNull(AllBusService))),
+  args: {},
+  resolve: allBusServiceControllerFunc,
 });
 
 export const busServiceByBusServiceNo = queryField('busServiceByBusServiceNo', {

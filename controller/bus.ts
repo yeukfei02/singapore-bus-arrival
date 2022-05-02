@@ -3,6 +3,7 @@ import { getBusStopByLatLong } from '../request/busStopByLatLong';
 import { getBusStopByRoadName } from '../request/busStopByRoadName';
 import { getBusStopByDescription } from '../request/busStopByDescription';
 import { getBusStopByBusStopCode } from '../request/busStopByBusStopCode';
+import { getAllBusService } from '../request/allBusService';
 import { getBusServiceByBusServiceNo } from '../request/busServiceByBusServiceNo';
 import { getBusRouteByBusServiceNo } from '../request/busRouteByBusServiceNo';
 import _ from 'lodash';
@@ -114,6 +115,14 @@ export const busStopByBusStopCodeControllerFunc = async (
   }
 
   return busStopCodeList;
+};
+
+export const allBusServiceControllerFunc = async (): Promise<any> => {
+  let allBusServiceList = await getAllBusService();
+
+  allBusServiceList = _.orderBy(allBusServiceList, ['serviceNo'], ['asc']);
+
+  return allBusServiceList;
 };
 
 export const busServiceByBusServiceNoControllerFunc = async (
