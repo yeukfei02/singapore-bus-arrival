@@ -12,7 +12,9 @@ export const getFavouritesByInstallationIdControllerFunc = async (
 
   const installationId = args.installationId;
   if (installationId) {
-    const favourites = await Favourites.scan({ installation_id: { eq: installationId } }).exec();
+    const favourites = await Favourites.scan({ installation_id: { eq: installationId } })
+      .all()
+      .exec();
     const favouritesList = favourites.toJSON();
     for (let index = 0; index < favouritesList.length; index++) {
       const item = favouritesList[index];

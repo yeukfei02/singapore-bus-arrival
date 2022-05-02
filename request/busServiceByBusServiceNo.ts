@@ -9,15 +9,8 @@ import { getBusStopByBusStopCode } from './busStopByBusStopCode';
 export const getBusServiceByBusServiceNo = async (busServiceNo: string): Promise<any> => {
   let busService = {};
 
-  const allBusServiceList = await getAllBusService();
-  if (!_.isEmpty(allBusServiceList)) {
-    const busList = allBusServiceList.filter((item: any, i: number) => {
-      if (item.serviceNo === busServiceNo) {
-        return item;
-      }
-    });
-    console.log('busList = ', busList);
-
+  const busList = await getAllBusService(busServiceNo);
+  if (!_.isEmpty(busList)) {
     const bus = busList[0];
     if (!_.isEmpty(bus)) {
       let originCodeBusStopCodeList = [];
