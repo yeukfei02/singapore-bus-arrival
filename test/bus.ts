@@ -25,7 +25,7 @@ export const busTest = (): void => {
           }
         }
       `;
-      const variables = { busStopCode: '07211' };
+      const variables = { busStopCode: '60261' };
       const response = await graphQLClient.request(BUS_ARRIVAL, variables);
       console.log('response = ', response);
 
@@ -116,83 +116,5 @@ export const busTest = (): void => {
       expect(response).toBeDefined();
       expect(response.busStopByBusStopCode).toBeDefined();
     });
-
-    // test('bus stop by bus service no', async () => {
-    //   const BUS_STOP_BY_BUS_SERVICE_NO = gql`
-    //     query busServiceByBusServiceNo($busServiceNo: String!) {
-    //       busServiceByBusServiceNo(busServiceNo: $busServiceNo) {
-    //         serviceNo
-    //         operator
-    //         direction
-    //         category
-    //         originCode
-    //         originBusStop {
-    //           busStopCode
-    //           roadName
-    //           description
-    //           latitude
-    //           longitude
-    //         }
-    //         destinationCode
-    //         destinationBusStop {
-    //           busStopCode
-    //           roadName
-    //           description
-    //           latitude
-    //           longitude
-    //         }
-    //         amPeakFreq
-    //         amOffpeakFreq
-    //         pmPeakFreq
-    //         pmOffpeakFreq
-    //         loopDesc
-    //       }
-    //     }
-    //   `;
-    //   const variables = {
-    //     busServiceNo: '131',
-    //   };
-    //   const response = await graphQLClient.request(BUS_STOP_BY_BUS_SERVICE_NO, variables);
-    //   console.log('response = ', response);
-
-    //   expect(response).toBeDefined();
-    //   expect(response.busServiceByBusServiceNo).toBeDefined();
-    // });
-
-    // test('bus route by bus service no', async () => {
-    //   const BUS_RUOTE_BY_BUS_SERVICE_NO = gql`
-    //     query busRouteByBusServiceNo($busServiceNo: String!) {
-    //       busRouteByBusServiceNo(busServiceNo: $busServiceNo) {
-    //         serviceNo
-    //         operator
-    //         direction
-    //         stopSequence
-    //         busStopCode
-    //         busStop {
-    //           busStopCode
-    //           roadName
-    //           description
-    //           latitude
-    //           longitude
-    //         }
-    //         distance
-    //         wdFirstBus
-    //         wdLastBus
-    //         satFirstBus
-    //         satLastBus
-    //         sunFirstBus
-    //         sunLastBus
-    //       }
-    //     }
-    //   `;
-    //   const variables = {
-    //     busServiceNo: '131',
-    //   };
-    //   const response = await graphQLClient.request(BUS_RUOTE_BY_BUS_SERVICE_NO, variables);
-    //   console.log('response = ', response);
-
-    //   expect(response).toBeDefined();
-    //   expect(response.busRouteByBusServiceNo).toBeDefined();
-    // });
   });
 };

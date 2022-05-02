@@ -3,6 +3,8 @@ import { getBusStopByLatLong } from '../request/busStopByLatLong';
 import { getBusStopByRoadName } from '../request/busStopByRoadName';
 import { getBusStopByDescription } from '../request/busStopByDescription';
 import { getBusStopByBusStopCode } from '../request/busStopByBusStopCode';
+import { getAllBusService } from '../request/allBusService';
+import { getAllBusRoute } from '../request/allBusRoute';
 import { getBusServiceByBusServiceNo } from '../request/busServiceByBusServiceNo';
 import { getBusRouteByBusServiceNo } from '../request/busRouteByBusServiceNo';
 import _ from 'lodash';
@@ -116,20 +118,36 @@ export const busStopByBusStopCodeControllerFunc = async (
   return busStopCodeList;
 };
 
+export const allBusServiceControllerFunc = async (): Promise<any> => {
+  let allBusServiceList = await getAllBusService();
+
+  allBusServiceList = _.orderBy(allBusServiceList, ['serviceNo'], ['asc']);
+
+  return allBusServiceList;
+};
+
+export const allBusRouteControllerFunc = async (): Promise<any> => {
+  let allBusRouteList = await getAllBusRoute();
+
+  allBusRouteList = _.orderBy(allBusRouteList, ['serviceNo'], ['asc']);
+
+  return allBusRouteList;
+};
+
 export const busServiceByBusServiceNoControllerFunc = async (
   parent: any,
   args: any,
   context: any,
   info: any,
-): Promise<any[]> => {
+): Promise<any> => {
   const busServiceNo = args.busServiceNo;
 
-  let busServiceList = [];
+  let busService = {};
   if (busServiceNo) {
-    busServiceList = await getBusServiceByBusServiceNo(busServiceNo);
+    busService = await getBusServiceByBusServiceNo(busServiceNo);
   }
 
-  return busServiceList;
+  return busService;
 };
 
 export const busRouteByBusServiceNoControllerFunc = async (

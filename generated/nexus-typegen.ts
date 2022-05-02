@@ -43,6 +43,35 @@ export interface NexusGenObjects {
     // root type
     status: boolean; // Boolean!
   };
+  AllBusRoute: {
+    // root type
+    busStopCode: string; // String!
+    direction: number; // Int!
+    distance: number; // Float!
+    operator: string; // String!
+    satFirstBus: string; // String!
+    satLastBus: string; // String!
+    serviceNo: string; // String!
+    stopSequence: number; // Int!
+    sunFirstBus: string; // String!
+    sunLastBus: string; // String!
+    wdFirstBus: string; // String!
+    wdLastBus: string; // String!
+  };
+  AllBusService: {
+    // root type
+    amOffpeakFreq: string; // String!
+    amPeakFreq: string; // String!
+    category: string; // String!
+    destinationCode: string; // String!
+    direction: number; // Int!
+    loopDesc?: string | null; // String
+    operator: string; // String!
+    originCode: string; // String!
+    pmOffpeakFreq: string; // String!
+    pmPeakFreq: string; // String!
+    serviceNo: string; // String!
+  };
   BusArrival: {
     // root type
     busStopCode: string; // String!
@@ -66,19 +95,8 @@ export interface NexusGenObjects {
   };
   BusService: {
     // root type
-    amOffpeakFreq: string; // String!
-    amPeakFreq: string; // String!
-    category: string; // String!
     destinationBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    destinationCode: string; // String!
-    direction: number; // Int!
-    loopDesc?: string | null; // String
-    operator: string; // String!
     originBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    originCode: string; // String!
-    pmOffpeakFreq: string; // String!
-    pmPeakFreq: string; // String!
-    serviceNo: string; // String!
   };
   BusStopCode: {
     // root type
@@ -140,6 +158,35 @@ export interface NexusGenFieldTypes {
     // field return type
     status: boolean; // Boolean!
   };
+  AllBusRoute: {
+    // field return type
+    busStopCode: string; // String!
+    direction: number; // Int!
+    distance: number; // Float!
+    operator: string; // String!
+    satFirstBus: string; // String!
+    satLastBus: string; // String!
+    serviceNo: string; // String!
+    stopSequence: number; // Int!
+    sunFirstBus: string; // String!
+    sunLastBus: string; // String!
+    wdFirstBus: string; // String!
+    wdLastBus: string; // String!
+  };
+  AllBusService: {
+    // field return type
+    amOffpeakFreq: string; // String!
+    amPeakFreq: string; // String!
+    category: string; // String!
+    destinationCode: string; // String!
+    direction: number; // Int!
+    loopDesc: string | null; // String
+    operator: string; // String!
+    originCode: string; // String!
+    pmOffpeakFreq: string; // String!
+    pmPeakFreq: string; // String!
+    serviceNo: string; // String!
+  };
   BusArrival: {
     // field return type
     busStopCode: string; // String!
@@ -163,19 +210,8 @@ export interface NexusGenFieldTypes {
   };
   BusService: {
     // field return type
-    amOffpeakFreq: string; // String!
-    amPeakFreq: string; // String!
-    category: string; // String!
     destinationBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    destinationCode: string; // String!
-    direction: number; // Int!
-    loopDesc: string | null; // String
-    operator: string; // String!
     originBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    originCode: string; // String!
-    pmOffpeakFreq: string; // String!
-    pmPeakFreq: string; // String!
-    serviceNo: string; // String!
   };
   BusStopCode: {
     // field return type
@@ -221,9 +257,11 @@ export interface NexusGenFieldTypes {
   };
   Query: {
     // field return type
+    allBusRoute: NexusGenRootTypes['AllBusRoute'][]; // [AllBusRoute!]!
+    allBusService: NexusGenRootTypes['AllBusService'][]; // [AllBusService!]!
     busArrival: NexusGenRootTypes['BusArrival']; // BusArrival!
     busRouteByBusServiceNo: NexusGenRootTypes['BusRoute'][]; // [BusRoute!]!
-    busServiceByBusServiceNo: NexusGenRootTypes['BusService'][]; // [BusService!]!
+    busServiceByBusServiceNo: NexusGenRootTypes['BusService']; // BusService!
     busStopByBusStopCode: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByDescription: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByLatLong: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
@@ -242,6 +280,35 @@ export interface NexusGenFieldTypeNames {
   AddFavouritesResult: {
     // field return type name
     status: 'Boolean';
+  };
+  AllBusRoute: {
+    // field return type name
+    busStopCode: 'String';
+    direction: 'Int';
+    distance: 'Float';
+    operator: 'String';
+    satFirstBus: 'String';
+    satLastBus: 'String';
+    serviceNo: 'String';
+    stopSequence: 'Int';
+    sunFirstBus: 'String';
+    sunLastBus: 'String';
+    wdFirstBus: 'String';
+    wdLastBus: 'String';
+  };
+  AllBusService: {
+    // field return type name
+    amOffpeakFreq: 'String';
+    amPeakFreq: 'String';
+    category: 'String';
+    destinationCode: 'String';
+    direction: 'Int';
+    loopDesc: 'String';
+    operator: 'String';
+    originCode: 'String';
+    pmOffpeakFreq: 'String';
+    pmPeakFreq: 'String';
+    serviceNo: 'String';
   };
   BusArrival: {
     // field return type name
@@ -266,19 +333,8 @@ export interface NexusGenFieldTypeNames {
   };
   BusService: {
     // field return type name
-    amOffpeakFreq: 'String';
-    amPeakFreq: 'String';
-    category: 'String';
     destinationBusStop: 'BusStopCode';
-    destinationCode: 'String';
-    direction: 'Int';
-    loopDesc: 'String';
-    operator: 'String';
     originBusStop: 'BusStopCode';
-    originCode: 'String';
-    pmOffpeakFreq: 'String';
-    pmPeakFreq: 'String';
-    serviceNo: 'String';
   };
   BusStopCode: {
     // field return type name
@@ -324,6 +380,8 @@ export interface NexusGenFieldTypeNames {
   };
   Query: {
     // field return type name
+    allBusRoute: 'AllBusRoute';
+    allBusService: 'AllBusService';
     busArrival: 'BusArrival';
     busRouteByBusServiceNo: 'BusRoute';
     busServiceByBusServiceNo: 'BusService';
