@@ -55,19 +55,8 @@ type BusRoute {
 }
 
 type BusService {
-  amOffpeakFreq: String!
-  amPeakFreq: String!
-  category: String!
   destinationBusStop: BusStopCode!
-  destinationCode: String!
-  direction: Int!
-  loopDesc: String
-  operator: String!
   originBusStop: BusStopCode!
-  originCode: String!
-  pmOffpeakFreq: String!
-  pmPeakFreq: String!
-  serviceNo: String!
 }
 
 type BusStopCode {
@@ -121,7 +110,7 @@ type Query {
   allBusService: [AllBusService!]!
   busArrival(busStopCode: String!): BusArrival!
   busRouteByBusServiceNo(busServiceNo: String!): [BusRoute!]!
-  busServiceByBusServiceNo(busServiceNo: String!): [BusService!]!
+  busServiceByBusServiceNo(busServiceNo: String!): BusService!
   busStopByBusStopCode(busStopCode: String!): [BusStopCode!]!
   busStopByDescription(description: String!): [BusStopCode!]!
   busStopByLatLong(latitude: Float!, longitude: Float!, pageNumber: Int!): [BusStopCode!]!

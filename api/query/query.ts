@@ -67,7 +67,7 @@ export const allBusService = queryField('allBusService', {
 });
 
 export const busServiceByBusServiceNo = queryField('busServiceByBusServiceNo', {
-  type: nonNull(list(nonNull(BusService))),
+  type: nonNull(BusService),
   args: {
     busServiceNo: nonNull(stringArg()),
   },

@@ -130,15 +130,15 @@ export const busServiceByBusServiceNoControllerFunc = async (
   args: any,
   context: any,
   info: any,
-): Promise<any[]> => {
+): Promise<any> => {
   const busServiceNo = args.busServiceNo;
 
-  let busServiceList = [];
+  let busService = {};
   if (busServiceNo) {
-    busServiceList = await getBusServiceByBusServiceNo(busServiceNo);
+    busService = await getBusServiceByBusServiceNo(busServiceNo);
   }
 
-  return busServiceList;
+  return busService;
 };
 
 export const busRouteByBusServiceNoControllerFunc = async (

@@ -79,19 +79,8 @@ export interface NexusGenObjects {
     wdLastBus: string; // String!
   }
   BusService: { // root type
-    amOffpeakFreq: string; // String!
-    amPeakFreq: string; // String!
-    category: string; // String!
     destinationBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    destinationCode: string; // String!
-    direction: number; // Int!
-    loopDesc?: string | null; // String
-    operator: string; // String!
     originBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    originCode: string; // String!
-    pmOffpeakFreq: string; // String!
-    pmPeakFreq: string; // String!
-    serviceNo: string; // String!
   }
   BusStopCode: { // root type
     busStopCode: string; // String!
@@ -181,19 +170,8 @@ export interface NexusGenFieldTypes {
     wdLastBus: string; // String!
   }
   BusService: { // field return type
-    amOffpeakFreq: string; // String!
-    amPeakFreq: string; // String!
-    category: string; // String!
     destinationBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    destinationCode: string; // String!
-    direction: number; // Int!
-    loopDesc: string | null; // String
-    operator: string; // String!
     originBusStop: NexusGenRootTypes['BusStopCode']; // BusStopCode!
-    originCode: string; // String!
-    pmOffpeakFreq: string; // String!
-    pmPeakFreq: string; // String!
-    serviceNo: string; // String!
   }
   BusStopCode: { // field return type
     busStopCode: string; // String!
@@ -235,7 +213,7 @@ export interface NexusGenFieldTypes {
     allBusService: NexusGenRootTypes['AllBusService'][]; // [AllBusService!]!
     busArrival: NexusGenRootTypes['BusArrival']; // BusArrival!
     busRouteByBusServiceNo: NexusGenRootTypes['BusRoute'][]; // [BusRoute!]!
-    busServiceByBusServiceNo: NexusGenRootTypes['BusService'][]; // [BusService!]!
+    busServiceByBusServiceNo: NexusGenRootTypes['BusService']; // BusService!
     busStopByBusStopCode: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByDescription: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
     busStopByLatLong: NexusGenRootTypes['BusStopCode'][]; // [BusStopCode!]!
@@ -286,19 +264,8 @@ export interface NexusGenFieldTypeNames {
     wdLastBus: 'String'
   }
   BusService: { // field return type name
-    amOffpeakFreq: 'String'
-    amPeakFreq: 'String'
-    category: 'String'
     destinationBusStop: 'BusStopCode'
-    destinationCode: 'String'
-    direction: 'Int'
-    loopDesc: 'String'
-    operator: 'String'
     originBusStop: 'BusStopCode'
-    originCode: 'String'
-    pmOffpeakFreq: 'String'
-    pmPeakFreq: 'String'
-    serviceNo: 'String'
   }
   BusStopCode: { // field return type name
     busStopCode: 'String'
