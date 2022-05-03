@@ -72,6 +72,14 @@ export interface NexusGenObjects {
     pmPeakFreq: string; // String!
     serviceNo: string; // String!
   };
+  AllBusStop: {
+    // root type
+    busStopCode: string; // String!
+    description: string; // String!
+    latitude: number; // Float!
+    longitude: number; // Float!
+    roadName: string; // String!
+  };
   BusArrival: {
     // root type
     busStopCode: string; // String!
@@ -187,6 +195,14 @@ export interface NexusGenFieldTypes {
     pmPeakFreq: string; // String!
     serviceNo: string; // String!
   };
+  AllBusStop: {
+    // field return type
+    busStopCode: string; // String!
+    description: string; // String!
+    latitude: number; // Float!
+    longitude: number; // Float!
+    roadName: string; // String!
+  };
   BusArrival: {
     // field return type
     busStopCode: string; // String!
@@ -259,6 +275,7 @@ export interface NexusGenFieldTypes {
     // field return type
     allBusRoute: NexusGenRootTypes['AllBusRoute'][]; // [AllBusRoute!]!
     allBusService: NexusGenRootTypes['AllBusService'][]; // [AllBusService!]!
+    allBusStop: NexusGenRootTypes['AllBusStop'][]; // [AllBusStop!]!
     busArrival: NexusGenRootTypes['BusArrival']; // BusArrival!
     busRouteByBusServiceNo: NexusGenRootTypes['BusRoute'][]; // [BusRoute!]!
     busServiceByBusServiceNo: NexusGenRootTypes['BusService']; // BusService!
@@ -309,6 +326,14 @@ export interface NexusGenFieldTypeNames {
     pmOffpeakFreq: 'String';
     pmPeakFreq: 'String';
     serviceNo: 'String';
+  };
+  AllBusStop: {
+    // field return type name
+    busStopCode: 'String';
+    description: 'String';
+    latitude: 'Float';
+    longitude: 'Float';
+    roadName: 'String';
   };
   BusArrival: {
     // field return type name
@@ -382,6 +407,7 @@ export interface NexusGenFieldTypeNames {
     // field return type name
     allBusRoute: 'AllBusRoute';
     allBusService: 'AllBusService';
+    allBusStop: 'AllBusStop';
     busArrival: 'BusArrival';
     busRouteByBusServiceNo: 'BusRoute';
     busServiceByBusServiceNo: 'BusService';

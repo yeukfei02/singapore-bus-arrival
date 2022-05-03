@@ -3,6 +3,7 @@ import { BusArrival } from '../types/busArrival';
 import { BusStopCode } from '../types/busStopCode';
 import { AllBusService } from '../types/allBusService';
 import { AllBusRoute } from '../types/allBusRoute';
+import { AllBusStop } from '../types/allBusStop';
 import { BusService } from '../types/busService';
 import { BusRoute } from '../types/busRoute';
 import { Favourites } from '../types/favourites';
@@ -15,6 +16,7 @@ import {
   busStopByBusStopCodeControllerFunc,
   allBusServiceControllerFunc,
   allBusRouteControllerFunc,
+  allBusStopControllerFunc,
   busServiceByBusServiceNoControllerFunc,
   busRouteByBusServiceNoControllerFunc,
 } from '../../controller/bus';
@@ -72,6 +74,12 @@ export const allBusRoute = queryField('allBusRoute', {
   type: nonNull(list(nonNull(AllBusRoute))),
   args: {},
   resolve: allBusRouteControllerFunc,
+});
+
+export const allBusStop = queryField('allBusStop', {
+  type: nonNull(list(nonNull(AllBusStop))),
+  args: {},
+  resolve: allBusStopControllerFunc,
 });
 
 export const busServiceByBusServiceNo = queryField('busServiceByBusServiceNo', {
