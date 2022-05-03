@@ -1,6 +1,3 @@
-// import env from 'dotenv';
-// env.config();
-
 import SingaporeBusStop from '../model/SingaporeBusStop';
 
 export const getAllBusStop = async (busStopCode?: string): Promise<any> => {

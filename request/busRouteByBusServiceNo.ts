@@ -1,6 +1,3 @@
-// import env from 'dotenv';
-// env.config();
-
 import _ from 'lodash';
 
 import { getAllBusRoute } from '../request/allBusRoute';
@@ -25,19 +22,19 @@ export const getBusRouteByBusServiceNo = async (busServiceNo: string): Promise<a
       }
 
       const obj = {
-        serviceNo: item.ServiceNo,
-        operator: item.Operator,
-        direction: item.Direction,
-        stopSequence: item.StopSequence,
-        busStopCode: item.BusStopCode,
+        serviceNo: item.serviceNo,
+        operator: item.operator,
+        direction: item.direction,
+        stopSequence: item.stopSequence,
+        busStopCode: item.busStopCode,
         busStop: busStop,
-        distance: item.Distance,
-        wdFirstBus: item.WD_FirstBus,
-        wdLastBus: item.WD_LastBus,
-        satFirstBus: item.SAT_FirstBus,
-        satLastBus: item.SAT_LastBus,
-        sunFirstBus: item.SUN_FirstBus,
-        sunLastBus: item.SUN_LastBus,
+        distance: item.distance,
+        wdFirstBus: item.wdFirstBus,
+        wdLastBus: item.wdLastBus,
+        satFirstBus: item.satFirstBus,
+        satLastBus: item.satLastBus,
+        sunFirstBus: item.sunFirstBus,
+        sunLastBus: item.sunLastBus,
       };
       busRouteResultList.push(obj);
     }
