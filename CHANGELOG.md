@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.10.0...v1.11.0) (2022-05-03)
+
+
+### Features
+
+* 🎸 add busServiceNo filter in allBusService api ([3049c71](https://github.com/yeukfei02/singapore-bus-arrival/commit/3049c71b7e21b608d24a2c38bdcace353820a0f8))
+
 ## [1.10.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.9.3...v1.10.0) (2022-05-03)
 
 
