@@ -170,6 +170,8 @@ export const busRouteByBusServiceNoControllerFunc = async (
   let busRouteList = [];
   if (busServiceNo) {
     busRouteList = await getBusRouteByBusServiceNo(busServiceNo);
+
+    busRouteList = _.orderBy(busRouteList, ['direction', 'stopSequence'], ['asc', 'asc']);
   }
 
   return busRouteList;

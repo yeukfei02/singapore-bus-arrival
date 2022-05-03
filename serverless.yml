@@ -45,7 +45,7 @@ functions:
       #     cors: true
       - schedule: cron(0 1 1 * ? *)
     timeout: 900
-    memorySize: 3000
+    memorySize: 10000
 
   # allBusRoute:
   #   handler: src/allBusRoute/handler.allBusRoute
@@ -67,7 +67,7 @@ functions:
       #     cors: true
       - schedule: cron(0 1 1 * ? *)
     timeout: 900
-    memorySize: 5000
+    memorySize: 10000
 
   graphql:
     handler: src/graphql/handler.graphqlHandler

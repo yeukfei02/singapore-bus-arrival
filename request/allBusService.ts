@@ -1,6 +1,3 @@
-// import env from 'dotenv';
-// env.config();
-
 import SingaporeBusService from '../model/SingaporeBusService';
 
 export const getAllBusService = async (busServiceNo?: string): Promise<any> => {
@@ -18,6 +15,10 @@ export const getAllBusService = async (busServiceNo?: string): Promise<any> => {
   let singaporeBusServiceList = [];
   if (singaporeBusService) {
     singaporeBusServiceList = singaporeBusService.toJSON();
+
+    singaporeBusServiceList = singaporeBusServiceList.filter((item: any, i: number) => {
+      return item.direction === 1;
+    });
   }
 
   return singaporeBusServiceList;

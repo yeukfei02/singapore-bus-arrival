@@ -1,6 +1,3 @@
-// import env from 'dotenv';
-// env.config();
-
 import _ from 'lodash';
 
 import { getAllBusService } from '../request/allBusService';
@@ -10,6 +7,8 @@ export const getBusServiceByBusServiceNo = async (busServiceNo: string): Promise
   let busService = {};
 
   const busList = await getAllBusService(busServiceNo);
+  console.log('busList = ', busList);
+
   if (!_.isEmpty(busList)) {
     const bus = busList[0];
     if (!_.isEmpty(bus)) {

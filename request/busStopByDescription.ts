@@ -1,73 +1,27 @@
-// import env from 'dotenv';
-// env.config();
-
-import axios from 'axios';
 import _ from 'lodash';
 
-import { BusStopCode, Value } from '../interface/BusStopCode';
+import { getAllBusStop } from './allBusStop';
 
 export const getBusStopByDescription = async (description: string): Promise<any> => {
-  const busStopCodeList: any[] = [];
+  const busStopCodeResultList: any[] = [];
 
-  let skipNum = 0;
-  let loopStatus = true;
-  while (loopStatus) {
-    const responseDataValue = await fetchBusStop(skipNum);
-    if (!_.isEmpty(responseDataValue)) {
-      for (let index = 0; index < responseDataValue.length; index++) {
-        const item = responseDataValue[index];
-        if (item.Description.toLowerCase().includes(description.toLowerCase())) {
-          const obj = {
-            busStopCode: item.BusStopCode,
-            roadName: item.RoadName,
-            description: item.Description,
-            latitude: item.Latitude,
-            longitude: item.Longitude,
-          };
-          busStopCodeList.push(obj);
-        }
+  const busStopCodeList = await getAllBusStop();
+  if (!_.isEmpty(busStopCodeList)) {
+    for (let index = 0; index < busStopCodeList.length; index++) {
+      const item = busStopCodeList[index];
+
+      if (item.description.toLowerCase().includes(description.toLowerCase())) {
+        const obj = {
+          busStopCode: item.busStopCode,
+          roadName: item.roadName,
+          description: item.description,
+          latitude: item.latitude,
+          longitude: item.longitude,
+        };
+        busStopCodeResultList.push(obj);
       }
-
-      skipNum += 500;
-    } else {
-      loopStatus = false;
     }
   }
 
-  return busStopCodeList;
+  return busStopCodeResultList;
 };
-
-async function fetchBusStop(skipNum?: number) {
-  let valueList: Value[] = [];
-
-  let response: any = null;
-  if (skipNum === 0) {
-    response = await axios.get(`http://datamall2.mytransport.sg/ltaodataservice/BusStops`, {
-      headers: {
-        AccountKey: process.env.ACCOUNT_KEY,
-        Accept: 'application/json',
-      },
-    });
-  } else {
-    response = await axios.get(`http://datamall2.mytransport.sg/ltaodataservice/BusStops`, {
-      params: {
-        $skip: skipNum,
-      },
-      headers: {
-        AccountKey: process.env.ACCOUNT_KEY,
-        Accept: 'application/json',
-      },
-    });
-  }
-
-  if (response) {
-    const responseData: BusStopCode = response.data;
-    console.log('responseData = ', responseData);
-
-    if (responseData && responseData.value) {
-      valueList = responseData.value;
-    }
-  }
-
-  return valueList;
-}
