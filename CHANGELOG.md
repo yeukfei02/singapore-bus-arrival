@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.9.3...v1.10.0) (2022-05-03)
+
+
+### Features
+
+* 🎸 add allBusRoute api ([4faf8e7](https://github.com/yeukfei02/singapore-bus-arrival/commit/4faf8e7054ca950bc18b837eb9e075726b63c1b7))
+* 🎸 add allBusService api ([cb1768b](https://github.com/yeukfei02/singapore-bus-arrival/commit/cb1768bedb1afb6d1ed7f0a0bc637859d158eec6))
+* 🎸 add allBusStop api ([9e69f63](https://github.com/yeukfei02/singapore-bus-arrival/commit/9e69f63fb759f7d5541e2620978c6a69eaf7d691))
+* 🎸 add allBusStop cron job ([990d8d4](https://github.com/yeukfei02/singapore-bus-arrival/commit/990d8d486d54e99ea33ae9f5f530882c4016aecc))
+* 🎸 add cron job for all bus service and bus route ([01b9d3f](https://github.com/yeukfei02/singapore-bus-arrival/commit/01b9d3fc4f93839b2f4faae0ca825ae70be9759c))
+
+
+### Bug Fixes
+
+* 🐛 fix busRoute and busService logic ([1eebb65](https://github.com/yeukfei02/singapore-bus-arrival/commit/1eebb6570e2f7d74b29140449760ffe9326ed9fc))
+* 🐛 fix busServiceByBusServiceNo api ([c3093ef](https://github.com/yeukfei02/singapore-bus-arrival/commit/c3093efd2642334d4c5b1ee9a8b5e071ddb98889))
+* 🐛 fix getBusRouteByBusServiceNo api logic ([988e3dc](https://github.com/yeukfei02/singapore-bus-arrival/commit/988e3dc00bb474697cd06302ca44e3701b4d60d2))
+* 🐛 fix logic ([2f27e28](https://github.com/yeukfei02/singapore-bus-arrival/commit/2f27e28e31c9178ef6835ad29122d05374f8e9f5))
+* 🐛 increase allBusStop memorySize ([7c4749b](https://github.com/yeukfei02/singapore-bus-arrival/commit/7c4749bb0c59c2b7f9a0bd42f29bde3b551bbb7c))
+* 🐛 update sls lib and fix test case ([c584dcd](https://github.com/yeukfei02/singapore-bus-arrival/commit/c584dcdcce619887d5ed3846bc0132d14eae6da7))
+
 ### [1.9.3](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.9.2...v1.9.3) (2022-04-10)
 
 
