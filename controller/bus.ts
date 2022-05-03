@@ -119,8 +119,10 @@ export const busStopByBusStopCodeControllerFunc = async (
   return busStopCodeList;
 };
 
-export const allBusServiceControllerFunc = async (): Promise<any> => {
-  let allBusServiceList = await getAllBusService();
+export const allBusServiceControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any> => {
+  const busServiceNo = args.busServiceNo;
+
+  let allBusServiceList = await getAllBusService(busServiceNo);
 
   allBusServiceList = _.orderBy(allBusServiceList, ['serviceNo'], ['asc']);
 

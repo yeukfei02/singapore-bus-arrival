@@ -66,7 +66,9 @@ export const busStopByBusStopCode = queryField('busStopByBusStopCode', {
 
 export const allBusService = queryField('allBusService', {
   type: nonNull(list(nonNull(AllBusService))),
-  args: {},
+  args: {
+    busServiceNo: stringArg(),
+  },
   resolve: allBusServiceControllerFunc,
 });
 

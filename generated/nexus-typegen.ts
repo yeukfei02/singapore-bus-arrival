@@ -437,6 +437,10 @@ export interface NexusGenArgTypes {
     };
   };
   Query: {
+    allBusService: {
+      // args
+      busServiceNo?: string | null; // String
+    };
     busArrival: {
       // args
       busStopCode: string; // String!
