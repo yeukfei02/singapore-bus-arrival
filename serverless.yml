@@ -34,6 +34,7 @@ provider:
   lambdaHashingVersion: 20201221
   architecture: arm64
   timeout: 30
+  memorySize: 2000
 
 functions:
   allBusService:
