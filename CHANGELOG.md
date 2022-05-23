@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.11.0...v1.12.0) (2022-05-23)
+
+
+### Features
+
+* 🎸 add defualt memorySize to 2000 ([168bc5c](https://github.com/yeukfei02/singapore-bus-arrival/commit/168bc5c43aa0b9d9aa777cc54d1ce87c0b968697))
+
+
+### Bug Fixes
+
+* 🐛 update sls lib and fix model ([34860b0](https://github.com/yeukfei02/singapore-bus-arrival/commit/34860b096d81aa4c344b7135f7819e791289b707))
+
 ## [1.11.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.10.0...v1.11.0) (2022-05-03)
 
 
