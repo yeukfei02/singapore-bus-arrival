@@ -22,7 +22,7 @@ jobs:
       - run: yarn
 
       - name: serverless deploy
-        uses: serverless/github-action@master
+        uses: serverless/github-action@v3
         with:
           args: deploy
         env:
