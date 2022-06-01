@@ -12,6 +12,8 @@ export const allBusService: Handler = async (event: APIGatewayEvent, context: Co
   let loopStatus = true;
   while (loopStatus) {
     const responseDataValue = await fetchBusService(skipNum);
+    console.log('responseDataValue.length = ', responseDataValue.length);
+
     if (!_.isEmpty(responseDataValue)) {
       for (let index = 0; index < responseDataValue.length; index++) {
         const item = responseDataValue[index];
