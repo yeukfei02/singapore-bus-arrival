@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.12.0...v1.12.1) (2022-06-01)
+
+
+### Bug Fixes
+
+* 🐛 add missing log ([08e79b6](https://github.com/yeukfei02/singapore-bus-arrival/commit/08e79b68fe45e5ab04f02f400484c3f998da657c))
+* 🐛 fix test case and cron job logic ([ee2eb8e](https://github.com/yeukfei02/singapore-bus-arrival/commit/ee2eb8ed82f15f8b455b8142909425e92c8e1cc2))
+* 🐛 update husky lib ([e0caf8a](https://github.com/yeukfei02/singapore-bus-arrival/commit/e0caf8a27d13b203573f40157e3450644d1e7ac1))
+
 ## [1.12.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.11.0...v1.12.0) (2022-05-23)
 
 
