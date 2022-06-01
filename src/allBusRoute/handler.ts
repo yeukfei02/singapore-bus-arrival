@@ -12,6 +12,8 @@ export const allBusRoute: Handler = async (event: APIGatewayEvent, context: Cont
   let loopStatus = true;
   while (loopStatus) {
     const responseDataValue = await fetchBusRoute(skipNum);
+    console.log('responseDataValue.length = ', responseDataValue.length);
+
     if (!_.isEmpty(responseDataValue)) {
       for (let index = 0; index < responseDataValue.length; index++) {
         const item = responseDataValue[index];
@@ -54,7 +56,7 @@ async function deleteAllBusRoute() {
   const singaporeBusRouteList = singaporeBusRoute.toJSON();
   for (let index = 0; index < singaporeBusRouteList.length; index++) {
     const singaporeBusRoute = singaporeBusRouteList[index];
-    await singaporeBusRoute.delete();
+    await SingaporeBusRoute.delete({ id: singaporeBusRoute.id });
   }
 }
 
