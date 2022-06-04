@@ -62,7 +62,7 @@ export const busStopByLatLongControllerFunc = async (
 
   console.log('### after pagination resultList.length = ', resultList.length);
 
-  resultList = _.orderBy(resultList, ['roadName', 'description'], ['desc', 'desc']);
+  resultList = _.orderBy(resultList, ['description', 'roadName'], ['desc', 'desc']);
 
   return resultList;
 };
