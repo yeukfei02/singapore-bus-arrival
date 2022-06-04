@@ -38,8 +38,8 @@ export const busStopByLatLongControllerFunc = async (
     resultList = busStopCodeList.filter((item: any, i: number) => {
       if (latitude > 0 && longitude > 0) {
         if (
-          _.inRange(latitude, item.latitude - 0.005, item.latitude + 0.005) &&
-          _.inRange(longitude, item.longitude - 0.005, item.longitude + 0.005)
+          _.inRange(latitude, item.latitude - 0.0015, item.latitude + 0.0015) &&
+          _.inRange(longitude, item.longitude - 0.0015, item.longitude + 0.0015)
         ) {
           return item;
         }
