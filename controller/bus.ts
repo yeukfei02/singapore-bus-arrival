@@ -80,7 +80,7 @@ export const busStopByRoadNameControllerFunc = async (
     busStopCodeList = await getBusStopByRoadName(roadName);
   }
 
-  busStopCodeList = _.orderBy(busStopCodeList, ['roadName', 'description'], ['desc', 'desc']);
+  busStopCodeList = _.orderBy(busStopCodeList, ['description', 'roadName'], ['desc', 'desc']);
 
   return busStopCodeList;
 };
@@ -98,7 +98,7 @@ export const busStopByDescriptionControllerFunc = async (
     busStopCodeList = await getBusStopByDescription(description);
   }
 
-  busStopCodeList = _.orderBy(busStopCodeList, ['roadName', 'description'], ['desc', 'desc']);
+  busStopCodeList = _.orderBy(busStopCodeList, ['description', 'roadName'], ['desc', 'desc']);
 
   return busStopCodeList;
 };
