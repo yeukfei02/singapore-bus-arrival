@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.12.1...v1.13.0) (2022-06-06)
+
+
+### Features
+
+* 🎸 fix order by ([b86f90d](https://github.com/yeukfei02/singapore-bus-arrival/commit/b86f90d5066708859d8b7bddf55b83f570777f8d))
+
+
+### Bug Fixes
+
+* 🐛 fix github action deploy.yml ([d9cc0d3](https://github.com/yeukfei02/singapore-bus-arrival/commit/d9cc0d37f72d4f9fef927e6e0adad9bd72edd7a5))
+* 🐛 fix lat long ([ad109e3](https://github.com/yeukfei02/singapore-bus-arrival/commit/ad109e3a37e437e72609f6da5512ba475ddd4f77))
+* 🐛 fix order by ([c6b275c](https://github.com/yeukfei02/singapore-bus-arrival/commit/c6b275c562f0c126458a7c20e8315a4f22db5958))
+* 🐛 remove not used order by ([049a588](https://github.com/yeukfei02/singapore-bus-arrival/commit/049a58894a3154ece773c85cc93d2068d5068dce))
+
 ### [1.12.1](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.12.0...v1.12.1) (2022-06-01)
 
 
