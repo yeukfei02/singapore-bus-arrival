@@ -58,7 +58,7 @@
     "remove": "serverless remove",
     "generate:nexus": "npx ts-node --transpile-only ./api/schema.ts",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
-    "format": "prettier --write 'api/*.ts' 'controller/*.ts' 'interface/*.ts' 'model/*.ts' 'request/*.ts' 'src/*/**/*.ts' 'test/*.ts'",
+    "format": "prettier --write 'api/*/**/*.ts' 'controller/*.ts' 'interface/*.ts' 'model/*.ts' 'request/*.ts' 'src/*/**/*.ts' 'test/*.ts'",
     "test": "jest",
     "commit": "git-cz",
     "release": "standard-version",
