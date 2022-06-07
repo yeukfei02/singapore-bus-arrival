@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn run generate:nexus && yarn lint
+yarn run generate:nexus && yarn run lint && yarn run format

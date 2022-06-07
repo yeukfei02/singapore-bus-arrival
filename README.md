@@ -24,8 +24,11 @@ $ yarn run deploy
 // open serverless dashboard
 $ yarn run dashboard
 
-// use eslint and prettier to format code
+// lint code
 $ yarn run lint
+
+// format code
+$ yarn run format
 
 // run test case
 $ yarn run test
