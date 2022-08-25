@@ -16,6 +16,7 @@ export const getFavouritesByInstallationIdControllerFunc = async (
       .all()
       .exec();
     const favouritesList = favourites.toJSON();
+
     for (let index = 0; index < favouritesList.length; index++) {
       const item = favouritesList[index];
       resultList.push(item);
