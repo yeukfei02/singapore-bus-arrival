@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.13.0...v1.14.0) (2022-08-25)
+
+
+### Features
+
+* 🎸 add format command ([a1262ac](https://github.com/yeukfei02/singapore-bus-arrival/commit/a1262ac7a2d2a8b2f398eab1a6d3a428f0697810))
+
+
+### Bug Fixes
+
+* 🐛 add line break ([a438d0b](https://github.com/yeukfei02/singapore-bus-arrival/commit/a438d0b48e6080f1ff4ef4b3a3cc92c236609840))
+* 🐛 fix busStopByLatLong logic and fix env ([db99a0e](https://github.com/yeukfei02/singapore-bus-arrival/commit/db99a0eccbee758ec3062e9989dddf070350bd54))
+* 🐛 fix format command ([11d7c20](https://github.com/yeukfei02/singapore-bus-arrival/commit/11d7c20f3cb6d0d620113e698e55e23be43149b8))
+* 🐛 fix format script ([8b3cd85](https://github.com/yeukfei02/singapore-bus-arrival/commit/8b3cd85c1b74d4f760ee7643c9f1c0a3a8ef5e8c))
+
 ## [1.13.0](https://github.com/yeukfei02/singapore-bus-arrival/compare/v1.12.1...v1.13.0) (2022-06-06)
 
 
