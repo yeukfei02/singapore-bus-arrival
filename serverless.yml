@@ -31,7 +31,6 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
     description: singapore bus arrival prod
-  lambdaHashingVersion: 20201221
   architecture: arm64
   timeout: 30
   memorySize: 2000
