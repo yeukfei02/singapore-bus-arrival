@@ -12,7 +12,7 @@ export const getBusArrival = async (busStopCode: string): Promise<any> => {
         BusStopCode: busStopCode,
       },
       headers: {
-        AccountKey: process.env.ACCOUNT_KEY,
+        AccountKey: process.env.ACCOUNT_KEY ? process.env.ACCOUNT_KEY : '',
         Accept: 'application/json',
       },
     });

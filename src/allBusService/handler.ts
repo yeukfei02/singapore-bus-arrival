@@ -66,7 +66,7 @@ async function fetchBusService(skipNum?: number) {
   if (skipNum === 0) {
     response = await axios.get(`http://datamall2.mytransport.sg/ltaodataservice/BusServices`, {
       headers: {
-        AccountKey: process.env.ACCOUNT_KEY,
+        AccountKey: process.env.ACCOUNT_KEY ? process.env.ACCOUNT_KEY : '',
         Accept: 'application/json',
       },
     });
@@ -76,7 +76,7 @@ async function fetchBusService(skipNum?: number) {
         $skip: skipNum,
       },
       headers: {
-        AccountKey: process.env.ACCOUNT_KEY,
+        AccountKey: process.env.ACCOUNT_KEY ? process.env.ACCOUNT_KEY : '',
         Accept: 'application/json',
       },
     });

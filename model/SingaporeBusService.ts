@@ -1,7 +1,7 @@
 import dynamoose from 'dynamoose';
 dynamoose.aws.sdk.config.update({
-  accessKeyId: process.env.MY_AWS_ACCESS_KEY,
-  secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY,
+  accessKeyId: process.env.MY_AWS_ACCESS_KEY ? process.env.MY_AWS_ACCESS_KEY : '',
+  secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY ? process.env.MY_AWS_SECRET_ACCESS_KEY : '',
   region: 'ap-southeast-1',
 });
 

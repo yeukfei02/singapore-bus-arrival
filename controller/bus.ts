@@ -30,37 +30,18 @@ export const busStopByLatLongControllerFunc = async (
   const pageNumber = args.pageNumber || 1;
 
   let limit = 10;
+  if (pageNumber > 1) {
+    limit = pageNumber * 10;
+  }
 
-  const busStopCodeList = await getBusStopByLatLong();
+  const busStopCodeList = await getBusStopByLatLong(latitude, longitude, limit);
   console.log('busStopCodeList.length = ', busStopCodeList.length);
 
   if (busStopCodeList) {
-    resultList = busStopCodeList.filter((item: any, i: number) => {
-      if (latitude > 0 && longitude > 0) {
-        if (
-          _.inRange(latitude, item.latitude - 0.0015, item.latitude + 0.0015) &&
-          _.inRange(longitude, item.longitude - 0.0015, item.longitude + 0.0015)
-        ) {
-          return item;
-        }
-      }
-    });
+    resultList = busStopCodeList;
   }
 
-  console.log('### before pagination resultList.length = ', resultList.length);
-
-  if (pageNumber === 1) {
-    resultList = resultList.filter((item: any, i: number) => {
-      return i < limit;
-    });
-  } else {
-    limit = pageNumber * 10;
-    resultList = resultList.filter((item: any, i: number) => {
-      return i < limit;
-    });
-  }
-
-  console.log('### after pagination resultList.length = ', resultList.length);
+  console.log('### resultList.length = ', resultList.length);
 
   resultList = _.orderBy(resultList, ['description', 'roadName'], ['desc', 'desc']);
 
