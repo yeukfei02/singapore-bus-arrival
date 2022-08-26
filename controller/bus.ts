@@ -41,8 +41,6 @@ export const busStopByLatLongControllerFunc = async (
     resultList = busStopCodeList;
   }
 
-  console.log('### resultList.length = ', resultList.length);
-
   resultList = _.orderBy(resultList, ['description', 'roadName'], ['desc', 'desc']);
 
   return resultList;
