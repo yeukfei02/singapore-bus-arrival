@@ -11,10 +11,15 @@ import { getBusRouteByBusServiceNo } from '../request/busRouteByBusServiceNo';
 import _ from 'lodash';
 
 export const busArrivalControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any[]> => {
-  const busStopCode = args.busStopCode;
-  const busArrivalList = await getBusArrival(busStopCode);
+  console.log('### busArrival ###');
+  console.log('args = ', args);
 
-  return busArrivalList;
+  const busStopCode = args.busStopCode;
+  const busArrival = await getBusArrival(busStopCode);
+
+  console.log('busArrival = ', busArrival);
+
+  return busArrival;
 };
 
 export const busStopByLatLongControllerFunc = async (
@@ -23,7 +28,10 @@ export const busStopByLatLongControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any[]> => {
-  let resultList: any[] = [];
+  console.log('### busStopByLatLong ###');
+  console.log('args = ', args);
+
+  let busStopByLatLongs: any[] = [];
 
   const latitude = args.latitude;
   const longitude = args.longitude;
@@ -34,16 +42,18 @@ export const busStopByLatLongControllerFunc = async (
     limit = pageNumber * 10;
   }
 
-  const busStopCodeList = await getBusStopByLatLong(latitude, longitude, limit);
-  console.log('busStopCodeList.length = ', busStopCodeList.length);
+  const busStopCodes = await getBusStopByLatLong(latitude, longitude, limit);
+  console.log('busStopCodes.length = ', busStopCodes.length);
 
-  if (busStopCodeList) {
-    resultList = busStopCodeList;
+  if (busStopCodes) {
+    busStopByLatLongs = busStopCodes;
   }
 
-  resultList = _.orderBy(resultList, ['description', 'roadName'], ['desc', 'desc']);
+  busStopByLatLongs = _.orderBy(busStopByLatLongs, ['description', 'roadName'], ['desc', 'desc']);
 
-  return resultList;
+  console.log('busStopByLatLongs = ', busStopByLatLongs);
+
+  return busStopByLatLongs;
 };
 
 export const busStopByRoadNameControllerFunc = async (
@@ -52,16 +62,22 @@ export const busStopByRoadNameControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any[]> => {
+  console.log('### busStopByRoadName ###');
+  console.log('args = ', args);
+
   const roadName = args.roadName;
 
-  let busStopCodeList = [];
+  let busStopCodes = [];
+
   if (roadName) {
-    busStopCodeList = await getBusStopByRoadName(roadName);
+    busStopCodes = await getBusStopByRoadName(roadName);
   }
 
-  busStopCodeList = _.orderBy(busStopCodeList, ['description', 'roadName'], ['desc', 'desc']);
+  busStopCodes = _.orderBy(busStopCodes, ['description', 'roadName'], ['desc', 'desc']);
 
-  return busStopCodeList;
+  console.log('busStopCodes = ', busStopCodes);
+
+  return busStopCodes;
 };
 
 export const busStopByDescriptionControllerFunc = async (
@@ -70,16 +86,22 @@ export const busStopByDescriptionControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any[]> => {
+  console.log('### busStopByDescription ###');
+  console.log('args = ', args);
+
   const description = args.description;
 
-  let busStopCodeList = [];
+  let busStopCodes = [];
+
   if (description) {
-    busStopCodeList = await getBusStopByDescription(description);
+    busStopCodes = await getBusStopByDescription(description);
   }
 
-  busStopCodeList = _.orderBy(busStopCodeList, ['description', 'roadName'], ['desc', 'desc']);
+  busStopCodes = _.orderBy(busStopCodes, ['description', 'roadName'], ['desc', 'desc']);
 
-  return busStopCodeList;
+  console.log('busStopCodes = ', busStopCodes);
+
+  return busStopCodes;
 };
 
 export const busStopByBusStopCodeControllerFunc = async (
@@ -88,40 +110,59 @@ export const busStopByBusStopCodeControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any[]> => {
+  console.log('### busStopByBusStopCode ###');
+  console.log('args = ', args);
+
   const busStopCode = args.busStopCode;
 
-  let busStopCodeList = [];
+  let busStopCodes = [];
+
   if (busStopCode) {
-    busStopCodeList = await getBusStopByBusStopCode(busStopCode);
+    busStopCodes = await getBusStopByBusStopCode(busStopCode);
   }
 
-  return busStopCodeList;
+  console.log('busStopCodes = ', busStopCodes);
+
+  return busStopCodes;
 };
 
 export const allBusServiceControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any> => {
+  console.log('### allBusService ###');
+  console.log('args = ', args);
+
   const busServiceNo = args.busServiceNo;
 
-  let allBusServiceList = await getAllBusService(busServiceNo);
+  let allBusServices = await getAllBusService(busServiceNo);
 
-  allBusServiceList = _.orderBy(allBusServiceList, ['serviceNo'], ['asc']);
+  allBusServices = _.orderBy(allBusServices, ['serviceNo'], ['asc']);
 
-  return allBusServiceList;
+  console.log('allBusServices = ', allBusServices);
+
+  return allBusServices;
 };
 
 export const allBusRouteControllerFunc = async (): Promise<any> => {
-  let allBusRouteList = await getAllBusRoute();
+  console.log('### allBusRoute ###');
 
-  allBusRouteList = _.orderBy(allBusRouteList, ['serviceNo'], ['asc']);
+  let allBusRoutes = await getAllBusRoute();
 
-  return allBusRouteList;
+  allBusRoutes = _.orderBy(allBusRoutes, ['serviceNo'], ['asc']);
+
+  console.log('allBusRoutes = ', allBusRoutes);
+
+  return allBusRoutes;
 };
 
 export const allBusStopControllerFunc = async (): Promise<any> => {
-  let allBusStopList = await getAllBusStop();
+  console.log('### allBusStop ###');
 
-  allBusStopList = _.orderBy(allBusStopList, ['busStopCode'], ['asc']);
+  let allBusStops = await getAllBusStop();
 
-  return allBusStopList;
+  allBusStops = _.orderBy(allBusStops, ['busStopCode'], ['asc']);
+
+  console.log('allBusStops = ', allBusStops);
+
+  return allBusStops;
 };
 
 export const busServiceByBusServiceNoControllerFunc = async (
@@ -130,12 +171,18 @@ export const busServiceByBusServiceNoControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any> => {
+  console.log('### busServiceByBusServiceNo ###');
+  console.log('args = ', args);
+
   const busServiceNo = args.busServiceNo;
 
   let busService = {};
+
   if (busServiceNo) {
     busService = await getBusServiceByBusServiceNo(busServiceNo);
   }
+
+  console.log('busService = ', busService);
 
   return busService;
 };
@@ -146,14 +193,20 @@ export const busRouteByBusServiceNoControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any[]> => {
+  console.log('### busRouteByBusServiceNo ###');
+  console.log('args = ', args);
+
   const busServiceNo = args.busServiceNo;
 
-  let busRouteList = [];
-  if (busServiceNo) {
-    busRouteList = await getBusRouteByBusServiceNo(busServiceNo);
+  let busRoutes = [];
 
-    busRouteList = _.orderBy(busRouteList, ['direction', 'stopSequence'], ['asc', 'asc']);
+  if (busServiceNo) {
+    busRoutes = await getBusRouteByBusServiceNo(busServiceNo);
+
+    busRoutes = _.orderBy(busRoutes, ['direction', 'stopSequence'], ['asc', 'asc']);
   }
 
-  return busRouteList;
+  console.log('busRoutes = ', busRoutes);
+
+  return busRoutes;
 };

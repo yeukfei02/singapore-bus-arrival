@@ -84,8 +84,6 @@ async function fetchBusService(skipNum?: number) {
 
   if (response) {
     const responseData: BusService = response.data;
-    console.log('responseData = ', responseData);
-
     if (responseData && responseData.value) {
       valueList = responseData.value;
     }

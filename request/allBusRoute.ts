@@ -12,10 +12,11 @@ export const getAllBusRoute = async (busServiceNo?: string): Promise<any> => {
       .exec();
   }
 
-  let singaporeBusRouteList = [];
+  let singaporeBusRoutes = [];
+
   if (singaporeBusRoute) {
-    singaporeBusRouteList = singaporeBusRoute.toJSON();
+    singaporeBusRoutes = singaporeBusRoute.toJSON();
   }
 
-  return singaporeBusRouteList;
+  return singaporeBusRoutes;
 };

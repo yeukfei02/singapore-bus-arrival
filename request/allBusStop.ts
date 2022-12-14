@@ -39,10 +39,11 @@ export const getAllBusStop = async (
       .exec();
   }
 
-  let singaporeBusStopList = [];
+  let singaporeBusStops = [];
+
   if (singaporeBusStop) {
-    singaporeBusStopList = singaporeBusStop.toJSON();
+    singaporeBusStops = singaporeBusStop.toJSON();
   }
 
-  return singaporeBusStopList;
+  return singaporeBusStops;
 };

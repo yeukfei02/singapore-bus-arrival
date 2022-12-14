@@ -8,6 +8,9 @@ export const getFavouritesByInstallationIdControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any[]> => {
+  console.log('### getFavouritesByInstallationId ###');
+  console.log('args = ', args);
+
   const resultList: any[] = [];
 
   const installationId = args.installationId;
@@ -24,11 +27,15 @@ export const getFavouritesByInstallationIdControllerFunc = async (
   }
 
   const formattedResultList = _.orderBy(resultList, ['createdAt'], ['desc']);
+  console.log('formattedResultList = ', formattedResultList);
 
   return formattedResultList;
 };
 
 export const addFavouritesControllerFunc = async (parent: any, args: any, context: any, info: any): Promise<any> => {
+  console.log('### addFavourites ###');
+  console.log('args = ', args);
+
   const result = {
     status: false,
   };
@@ -52,6 +59,8 @@ export const addFavouritesControllerFunc = async (parent: any, args: any, contex
     result.status = true;
   }
 
+  console.log('result = ', result);
+
   return result;
 };
 
@@ -61,6 +70,9 @@ export const deleteFavouritesByIdControllerFunc = async (
   context: any,
   info: any,
 ): Promise<any> => {
+  console.log('### deleteFavouritesById ###');
+  console.log('args = ', args);
+
   const result = {
     status: false,
   };
@@ -72,6 +84,8 @@ export const deleteFavouritesByIdControllerFunc = async (
 
     result.status = true;
   }
+
+  console.log('result = ', result);
 
   return result;
 };

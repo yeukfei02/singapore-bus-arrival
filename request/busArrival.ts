@@ -18,8 +18,6 @@ export const getBusArrival = async (busStopCode: string): Promise<any> => {
     });
     if (response) {
       const responseData: BusArrival = response.data;
-      console.log('responseData = ', responseData);
-
       if (responseData) {
         busArrival['busStopCode'] = responseData.BusStopCode;
 

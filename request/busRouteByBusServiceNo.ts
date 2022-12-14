@@ -4,12 +4,12 @@ import { getAllBusRoute } from '../request/allBusRoute';
 import { getBusStopByBusStopCode } from './busStopByBusStopCode';
 
 export const getBusRouteByBusServiceNo = async (busServiceNo: string): Promise<any> => {
-  const busRouteResultList: any[] = [];
+  const busRouteResults: any[] = [];
 
-  const busRouteList = await getAllBusRoute(busServiceNo);
-  if (!_.isEmpty(busRouteList)) {
-    for (let index = 0; index < busRouteList.length; index++) {
-      const item = busRouteList[index];
+  const busRoutes = await getAllBusRoute(busServiceNo);
+  if (!_.isEmpty(busRoutes)) {
+    for (let index = 0; index < busRoutes.length; index++) {
+      const item = busRoutes[index];
 
       let busStopCodeList = [];
       if (item.busStopCode) {
@@ -36,9 +36,9 @@ export const getBusRouteByBusServiceNo = async (busServiceNo: string): Promise<a
         sunFirstBus: item.sunFirstBus,
         sunLastBus: item.sunLastBus,
       };
-      busRouteResultList.push(obj);
+      busRouteResults.push(obj);
     }
   }
 
-  return busRouteResultList;
+  return busRouteResults;
 };
