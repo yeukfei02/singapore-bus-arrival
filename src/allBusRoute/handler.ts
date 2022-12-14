@@ -85,8 +85,6 @@ async function fetchBusRoute(skipNum?: number) {
 
   if (response) {
     const responseData: BusRoute = response.data;
-    console.log('responseData = ', responseData);
-
     if (responseData && responseData.value) {
       valueList = responseData.value;
     }

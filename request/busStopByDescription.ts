@@ -3,12 +3,12 @@ import _ from 'lodash';
 import { getAllBusStop } from './allBusStop';
 
 export const getBusStopByDescription = async (description: string): Promise<any> => {
-  const busStopCodeResultList: any[] = [];
+  const busStopCodeResults: any[] = [];
 
-  const busStopCodeList = await getAllBusStop();
-  if (!_.isEmpty(busStopCodeList)) {
-    for (let index = 0; index < busStopCodeList.length; index++) {
-      const item = busStopCodeList[index];
+  const busStopCodes = await getAllBusStop();
+  if (!_.isEmpty(busStopCodes)) {
+    for (let index = 0; index < busStopCodes.length; index++) {
+      const item = busStopCodes[index];
 
       if (item.description.toLowerCase().includes(description.toLowerCase())) {
         const obj = {
@@ -18,10 +18,10 @@ export const getBusStopByDescription = async (description: string): Promise<any>
           latitude: item.latitude,
           longitude: item.longitude,
         };
-        busStopCodeResultList.push(obj);
+        busStopCodeResults.push(obj);
       }
     }
   }
 
-  return busStopCodeResultList;
+  return busStopCodeResults;
 };

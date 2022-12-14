@@ -12,14 +12,15 @@ export const getAllBusService = async (busServiceNo?: string): Promise<any> => {
       .exec();
   }
 
-  let singaporeBusServiceList = [];
-  if (singaporeBusService) {
-    singaporeBusServiceList = singaporeBusService.toJSON();
+  let singaporeBusServices = [];
 
-    singaporeBusServiceList = singaporeBusServiceList.filter((item: any, i: number) => {
+  if (singaporeBusService) {
+    singaporeBusServices = singaporeBusService.toJSON();
+
+    singaporeBusServices = singaporeBusServices.filter((item: any, i: number) => {
       return item.direction === 1;
     });
   }
 
-  return singaporeBusServiceList;
+  return singaporeBusServices;
 };
