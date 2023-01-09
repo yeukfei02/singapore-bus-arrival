@@ -47,16 +47,16 @@ functions:
     timeout: 900
     memorySize: 10000
 
-  # allBusRoute:
-  #   handler: src/allBusRoute/handler.allBusRoute
-  #   events:
-  #     - http:
-  #         path: /all-bus-route
-  #         method: get
-  #         cors: true
-  #     - schedule: cron(0 1 1 * ? *)
-  #   timeout: 900
-  #   memorySize: 10000
+  allBusRoute:
+    handler: src/allBusRoute/handler.allBusRoute
+    events:
+      # - http:
+      #     path: /all-bus-route
+      #     method: get
+      #     cors: true
+      - schedule: cron(0 1 1 * ? *)
+    timeout: 900
+    memorySize: 10000
 
   allBusStop:
     handler: src/allBusStop/handler.allBusStop
