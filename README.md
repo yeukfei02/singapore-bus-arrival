@@ -1,6 +1,6 @@
 # singapore-bus-arrival
 
-singapore bus arrival times api
+singapore bus arrival times api (新加坡巴士到站時間Api)
 
 documentation: <https://documenter.getpostman.com/view/3827865/TVeiDBKg>
 
