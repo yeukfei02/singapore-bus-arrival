@@ -45,12 +45,16 @@ export const allBusStop: Handler = async (event: APIGatewayEvent, context: Conte
 };
 
 async function deleteAllBusStop() {
+  console.log('### deleteAllBusStop start ###');
+
   const singaporeBusStop = await SingaporeBusStop.scan().all().exec();
   const singaporeBusStopList = singaporeBusStop.toJSON();
   for (let index = 0; index < singaporeBusStopList.length; index++) {
     const singaporeBusStop = singaporeBusStopList[index];
     await SingaporeBusStop.delete({ id: singaporeBusStop.id });
   }
+
+  console.log('### deleteAllBusStop end ###');
 }
 
 async function fetchBusStop(skipNum?: number) {

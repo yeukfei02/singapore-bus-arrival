@@ -52,12 +52,16 @@ export const allBusRoute: Handler = async (event: APIGatewayEvent, context: Cont
 };
 
 async function deleteAllBusRoute() {
+  console.log('### deleteAllBusRoute start ###');
+
   const singaporeBusRoute = await SingaporeBusRoute.scan().all().exec();
   const singaporeBusRouteList = singaporeBusRoute.toJSON();
   for (let index = 0; index < singaporeBusRouteList.length; index++) {
     const singaporeBusRoute = singaporeBusRouteList[index];
     await SingaporeBusRoute.delete({ id: singaporeBusRoute.id });
   }
+
+  console.log('### deleteAllBusRoute end ###');
 }
 
 async function fetchBusRoute(skipNum?: number) {
