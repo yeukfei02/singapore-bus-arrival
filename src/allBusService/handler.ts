@@ -51,12 +51,16 @@ export const allBusService: Handler = async (event: APIGatewayEvent, context: Co
 };
 
 async function deleteAllBusService() {
+  console.log('### deleteAllBusService start ###');
+
   const singaporeBusService = await SingaporeBusService.scan().all().exec();
   const singaporeBusServiceList = singaporeBusService.toJSON();
   for (let index = 0; index < singaporeBusServiceList.length; index++) {
     const singaporeBusService = singaporeBusServiceList[index];
     await SingaporeBusService.delete({ id: singaporeBusService.id });
   }
+
+  console.log('### deleteAllBusService end ###');
 }
 
 async function fetchBusService(skipNum?: number) {
