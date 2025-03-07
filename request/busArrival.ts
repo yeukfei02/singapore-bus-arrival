@@ -6,8 +6,10 @@ import { BusArrival, Service } from '../interface/BusArrival';
 export const getBusArrival = async (busStopCode: string): Promise<any> => {
   const busArrival = {};
 
+  const busArrivalUrl = 'https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival';
+
   if (busStopCode) {
-    const response = await axios.get(`http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2`, {
+    const response = await axios.get(busArrivalUrl, {
       params: {
         BusStopCode: busStopCode,
       },

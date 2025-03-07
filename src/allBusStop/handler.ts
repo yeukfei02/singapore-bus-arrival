@@ -60,16 +60,18 @@ async function deleteAllBusStop() {
 async function fetchBusStop(skipNum?: number) {
   let valueList: Value[] = [];
 
+  const busStopsUrl = 'https://datamall2.mytransport.sg/ltaodataservice/BusStops';
+
   let response: any = null;
   if (skipNum === 0) {
-    response = await axios.get(`http://datamall2.mytransport.sg/ltaodataservice/BusStops`, {
+    response = await axios.get(busStopsUrl, {
       headers: {
         AccountKey: process.env.ACCOUNT_KEY ? process.env.ACCOUNT_KEY : '',
         Accept: 'application/json',
       },
     });
   } else {
-    response = await axios.get(`http://datamall2.mytransport.sg/ltaodataservice/BusStops`, {
+    response = await axios.get(busStopsUrl, {
       params: {
         $skip: skipNum,
       },
